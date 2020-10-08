@@ -1,0 +1,1041 @@
+
+par:     formato del fichero elf64-x86-64
+
+
+Desensamblado de la sección .init:
+
+0000000000000f20 <_init>:
+ f20:	48 83 ec 08          	sub    $0x8,%rsp
+ f24:	48 8b 05 c5 20 20 00 	mov    0x2020c5(%rip),%rax        # 202ff0 <__gmon_start__>
+ f2b:	48 85 c0             	test   %rax,%rax
+ f2e:	74 02                	je     f32 <_init+0x12>
+ f30:	ff d0                	callq  *%rax
+ f32:	48 83 c4 08          	add    $0x8,%rsp
+ f36:	c3                   	retq   
+
+Desensamblado de la sección .plt:
+
+0000000000000f40 <.plt>:
+     f40:	ff 35 c2 20 20 00    	pushq  0x2020c2(%rip)        # 203008 <_GLOBAL_OFFSET_TABLE_+0x8>
+     f46:	ff 25 c4 20 20 00    	jmpq   *0x2020c4(%rip)        # 203010 <_GLOBAL_OFFSET_TABLE_+0x10>
+     f4c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000f50 <__errno_location@plt>:
+     f50:	ff 25 c2 20 20 00    	jmpq   *0x2020c2(%rip)        # 203018 <__errno_location@GLIBC_2.2.5>
+     f56:	68 00 00 00 00       	pushq  $0x0
+     f5b:	e9 e0 ff ff ff       	jmpq   f40 <.plt>
+
+0000000000000f60 <std::terminate()@plt>:
+     f60:	ff 25 ba 20 20 00    	jmpq   *0x2020ba(%rip)        # 203020 <std::terminate()@GLIBCXX_3.4>
+     f66:	68 01 00 00 00       	pushq  $0x1
+     f6b:	e9 d0 ff ff ff       	jmpq   f40 <.plt>
+
+0000000000000f70 <nanosleep@plt>:
+     f70:	ff 25 b2 20 20 00    	jmpq   *0x2020b2(%rip)        # 203028 <nanosleep@GLIBC_2.2.5>
+     f76:	68 02 00 00 00       	pushq  $0x2
+     f7b:	e9 c0 ff ff ff       	jmpq   f40 <.plt>
+
+0000000000000f80 <std::thread::_State::~_State()@plt>:
+     f80:	ff 25 aa 20 20 00    	jmpq   *0x2020aa(%rip)        # 203030 <std::thread::_State::~_State()@GLIBCXX_3.4.22>
+     f86:	68 03 00 00 00       	pushq  $0x3
+     f8b:	e9 b0 ff ff ff       	jmpq   f40 <.plt>
+
+0000000000000f90 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@plt>:
+     f90:	ff 25 a2 20 20 00    	jmpq   *0x2020a2(%rip)        # 203038 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@GLIBCXX_3.4>
+     f96:	68 04 00 00 00       	pushq  $0x4
+     f9b:	e9 a0 ff ff ff       	jmpq   f40 <.plt>
+
+0000000000000fa0 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@plt>:
+     fa0:	ff 25 9a 20 20 00    	jmpq   *0x20209a(%rip)        # 203040 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@GLIBCXX_3.4.9>
+     fa6:	68 05 00 00 00       	pushq  $0x5
+     fab:	e9 90 ff ff ff       	jmpq   f40 <.plt>
+
+0000000000000fb0 <__cxa_atexit@plt>:
+     fb0:	ff 25 92 20 20 00    	jmpq   *0x202092(%rip)        # 203048 <__cxa_atexit@GLIBC_2.2.5>
+     fb6:	68 06 00 00 00       	pushq  $0x6
+     fbb:	e9 80 ff ff ff       	jmpq   f40 <.plt>
+
+0000000000000fc0 <std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)())@plt>:
+     fc0:	ff 25 8a 20 20 00    	jmpq   *0x20208a(%rip)        # 203050 <std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)())@GLIBCXX_3.4.22>
+     fc6:	68 07 00 00 00       	pushq  $0x7
+     fcb:	e9 70 ff ff ff       	jmpq   f40 <.plt>
+
+0000000000000fd0 <operator delete(void*)@plt>:
+     fd0:	ff 25 82 20 20 00    	jmpq   *0x202082(%rip)        # 203058 <operator delete(void*)@GLIBCXX_3.4>
+     fd6:	68 08 00 00 00       	pushq  $0x8
+     fdb:	e9 60 ff ff ff       	jmpq   f40 <.plt>
+
+0000000000000fe0 <operator new(unsigned long)@plt>:
+     fe0:	ff 25 7a 20 20 00    	jmpq   *0x20207a(%rip)        # 203060 <operator new(unsigned long)@GLIBCXX_3.4>
+     fe6:	68 09 00 00 00       	pushq  $0x9
+     feb:	e9 50 ff ff ff       	jmpq   f40 <.plt>
+
+0000000000000ff0 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>:
+     ff0:	ff 25 72 20 20 00    	jmpq   *0x202072(%rip)        # 203068 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@GLIBCXX_3.4.9>
+     ff6:	68 0a 00 00 00       	pushq  $0xa
+     ffb:	e9 40 ff ff ff       	jmpq   f40 <.plt>
+
+0000000000001000 <std::thread::hardware_concurrency()@plt>:
+    1000:	ff 25 6a 20 20 00    	jmpq   *0x20206a(%rip)        # 203070 <std::thread::hardware_concurrency()@GLIBCXX_3.4.17>
+    1006:	68 0b 00 00 00       	pushq  $0xb
+    100b:	e9 30 ff ff ff       	jmpq   f40 <.plt>
+
+0000000000001010 <std::ios_base::Init::Init()@plt>:
+    1010:	ff 25 62 20 20 00    	jmpq   *0x202062(%rip)        # 203078 <std::ios_base::Init::Init()@GLIBCXX_3.4>
+    1016:	68 0c 00 00 00       	pushq  $0xc
+    101b:	e9 20 ff ff ff       	jmpq   f40 <.plt>
+
+0000000000001020 <std::thread::join()@plt>:
+    1020:	ff 25 5a 20 20 00    	jmpq   *0x20205a(%rip)        # 203080 <std::thread::join()@GLIBCXX_3.4.11>
+    1026:	68 0d 00 00 00       	pushq  $0xd
+    102b:	e9 10 ff ff ff       	jmpq   f40 <.plt>
+
+0000000000001030 <_Unwind_Resume@plt>:
+    1030:	ff 25 52 20 20 00    	jmpq   *0x202052(%rip)        # 203088 <_Unwind_Resume@GCC_3.0>
+    1036:	68 0e 00 00 00       	pushq  $0xe
+    103b:	e9 00 ff ff ff       	jmpq   f40 <.plt>
+
+Desensamblado de la sección .plt.got:
+
+0000000000001040 <.plt.got>:
+    1040:	ff 25 7a 1f 20 00    	jmpq   *0x201f7a(%rip)        # 202fc0 <__cxa_finalize@GLIBC_2.2.5>
+    1046:	66 90                	xchg   %ax,%ax
+
+Desensamblado de la sección .text:
+
+0000000000001050 <main>:
+    1050:	55                   	push   %rbp
+    1051:	48 89 e5             	mov    %rsp,%rbp
+    1054:	41 57                	push   %r15
+    1056:	41 56                	push   %r14
+    1058:	41 55                	push   %r13
+    105a:	41 54                	push   %r12
+    105c:	41 52                	push   %r10
+    105e:	53                   	push   %rbx
+    105f:	48 81 ec 90 00 00 00 	sub    $0x90,%rsp
+    1066:	e8 95 ff ff ff       	callq  1000 <std::thread::hardware_concurrency()@plt>
+    106b:	be 02 00 00 00       	mov    $0x2,%esi
+    1070:	83 f8 02             	cmp    $0x2,%eax
+    1073:	0f 42 c6             	cmovb  %esi,%eax
+    1076:	d1 e8                	shr    %eax
+    1078:	89 c0                	mov    %eax,%eax
+    107a:	48 8d 0c c5 00 00 00 	lea    0x0(,%rax,8),%rcx
+    1081:	00 
+    1082:	48 89 c6             	mov    %rax,%rsi
+    1085:	48 8d 78 ff          	lea    -0x1(%rax),%rdi
+    1089:	4c 8d 49 16          	lea    0x16(%rcx),%r9
+    108d:	48 89 8d 40 ff ff ff 	mov    %rcx,-0xc0(%rbp)
+    1094:	b9 03 00 00 00       	mov    $0x3,%ecx
+    1099:	4c 89 ca             	mov    %r9,%rdx
+    109c:	48 c1 ea 04          	shr    $0x4,%rdx
+    10a0:	48 c1 e2 04          	shl    $0x4,%rdx
+    10a4:	48 29 d4             	sub    %rdx,%rsp
+    10a7:	c4 62 f3 f7 d4       	shrx   %rcx,%rsp,%r10
+    10ac:	4a 8d 0c d5 00 00 00 	lea    0x0(,%r10,8),%rcx
+    10b3:	00 
+    10b4:	48 89 ca             	mov    %rcx,%rdx
+    10b7:	48 89 8d 50 ff ff ff 	mov    %rcx,-0xb0(%rbp)
+    10be:	48 c1 ea 03          	shr    $0x3,%rdx
+    10c2:	48 89 8d 70 ff ff ff 	mov    %rcx,-0x90(%rbp)
+    10c9:	48 f7 da             	neg    %rdx
+    10cc:	83 e2 03             	and    $0x3,%edx
+    10cf:	48 39 c2             	cmp    %rax,%rdx
+    10d2:	48 0f 47 d0          	cmova  %rax,%rdx
+    10d6:	83 f8 06             	cmp    $0x6,%eax
+    10d9:	0f 87 10 07 00 00    	ja     17ef <main+0x79f>
+    10df:	48 89 c2             	mov    %rax,%rdx
+    10e2:	48 89 cb             	mov    %rcx,%rbx
+    10e5:	4c 8d 41 08          	lea    0x8(%rcx),%r8
+    10e9:	48 8d 48 fe          	lea    -0x2(%rax),%rcx
+    10ed:	4a c7 04 d5 00 00 00 	movq   $0x0,0x0(,%r10,8)
+    10f4:	00 00 00 00 00 
+    10f9:	49 89 cb             	mov    %rcx,%r11
+    10fc:	48 83 fa 01          	cmp    $0x1,%rdx
+    1100:	74 7c                	je     117e <main+0x12e>
+    1102:	4a c7 04 d5 08 00 00 	movq   $0x0,0x8(,%r10,8)
+    1109:	00 00 00 00 00 
+    110e:	4c 8d 43 10          	lea    0x10(%rbx),%r8
+    1112:	4c 8d 58 fd          	lea    -0x3(%rax),%r11
+    1116:	48 83 fa 02          	cmp    $0x2,%rdx
+    111a:	74 62                	je     117e <main+0x12e>
+    111c:	4a c7 04 d5 10 00 00 	movq   $0x0,0x10(,%r10,8)
+    1123:	00 00 00 00 00 
+    1128:	4c 8d 43 18          	lea    0x18(%rbx),%r8
+    112c:	4c 8d 58 fc          	lea    -0x4(%rax),%r11
+    1130:	48 83 fa 03          	cmp    $0x3,%rdx
+    1134:	74 48                	je     117e <main+0x12e>
+    1136:	4a c7 04 d5 18 00 00 	movq   $0x0,0x18(,%r10,8)
+    113d:	00 00 00 00 00 
+    1142:	4c 8d 43 20          	lea    0x20(%rbx),%r8
+    1146:	4c 8d 58 fb          	lea    -0x5(%rax),%r11
+    114a:	48 83 fa 04          	cmp    $0x4,%rdx
+    114e:	74 2e                	je     117e <main+0x12e>
+    1150:	4a c7 04 d5 20 00 00 	movq   $0x0,0x20(,%r10,8)
+    1157:	00 00 00 00 00 
+    115c:	4c 8d 43 28          	lea    0x28(%rbx),%r8
+    1160:	4c 8d 58 fa          	lea    -0x6(%rax),%r11
+    1164:	48 83 fa 05          	cmp    $0x5,%rdx
+    1168:	74 14                	je     117e <main+0x12e>
+    116a:	4a c7 04 d5 28 00 00 	movq   $0x0,0x28(,%r10,8)
+    1171:	00 00 00 00 00 
+    1176:	4c 8d 43 30          	lea    0x30(%rbx),%r8
+    117a:	4c 8d 58 f9          	lea    -0x7(%rax),%r11
+    117e:	48 39 d0             	cmp    %rdx,%rax
+    1181:	0f 84 44 06 00 00    	je     17cb <main+0x77b>
+    1187:	48 89 c3             	mov    %rax,%rbx
+    118a:	49 89 fc             	mov    %rdi,%r12
+    118d:	48 29 d3             	sub    %rdx,%rbx
+    1190:	49 29 d4             	sub    %rdx,%r12
+    1193:	48 8d 4b fc          	lea    -0x4(%rbx),%rcx
+    1197:	48 c1 e9 02          	shr    $0x2,%rcx
+    119b:	48 83 c1 01          	add    $0x1,%rcx
+    119f:	4c 8d 14 8d 00 00 00 	lea    0x0(,%rcx,4),%r10
+    11a6:	00 
+    11a7:	49 83 fc 02          	cmp    $0x2,%r12
+    11ab:	76 30                	jbe    11dd <main+0x18d>
+    11ad:	4c 8b bd 50 ff ff ff 	mov    -0xb0(%rbp),%r15
+    11b4:	c5 f9 ef c0          	vpxor  %xmm0,%xmm0,%xmm0
+    11b8:	4d 8d 24 d7          	lea    (%r15,%rdx,8),%r12
+    11bc:	31 d2                	xor    %edx,%edx
+    11be:	48 83 c2 01          	add    $0x1,%rdx
+    11c2:	c4 c1 7d 7f 04 24    	vmovdqa %ymm0,(%r12)
+    11c8:	49 83 c4 20          	add    $0x20,%r12
+    11cc:	48 39 d1             	cmp    %rdx,%rcx
+    11cf:	77 ed                	ja     11be <main+0x16e>
+    11d1:	4f 8d 04 d0          	lea    (%r8,%r10,8),%r8
+    11d5:	4d 29 d3             	sub    %r10,%r11
+    11d8:	4c 39 d3             	cmp    %r10,%rbx
+    11db:	74 22                	je     11ff <main+0x1af>
+    11dd:	49 c7 00 00 00 00 00 	movq   $0x0,(%r8)
+    11e4:	4d 85 db             	test   %r11,%r11
+    11e7:	74 16                	je     11ff <main+0x1af>
+    11e9:	49 83 eb 01          	sub    $0x1,%r11
+    11ed:	49 c7 40 08 00 00 00 	movq   $0x0,0x8(%r8)
+    11f4:	00 
+    11f5:	74 08                	je     11ff <main+0x1af>
+    11f7:	49 c7 40 10 00 00 00 	movq   $0x0,0x10(%r8)
+    11fe:	00 
+    11ff:	49 c1 e9 04          	shr    $0x4,%r9
+    1203:	49 c1 e1 04          	shl    $0x4,%r9
+    1207:	4c 29 cc             	sub    %r9,%rsp
+    120a:	48 89 e2             	mov    %rsp,%rdx
+    120d:	48 89 a5 48 ff ff ff 	mov    %rsp,-0xb8(%rbp)
+    1214:	48 c1 ea 03          	shr    $0x3,%rdx
+    1218:	48 89 a5 78 ff ff ff 	mov    %rsp,-0x88(%rbp)
+    121f:	48 f7 da             	neg    %rdx
+    1222:	83 e2 03             	and    $0x3,%edx
+    1225:	48 39 c2             	cmp    %rax,%rdx
+    1228:	48 0f 47 d0          	cmova  %rax,%rdx
+    122c:	83 fe 06             	cmp    $0x6,%esi
+    122f:	0f 87 ce 05 00 00    	ja     1803 <main+0x7b3>
+    1235:	48 89 c2             	mov    %rax,%rdx
+    1238:	48 8d 48 fe          	lea    -0x2(%rax),%rcx
+    123c:	48 8b b5 48 ff ff ff 	mov    -0xb8(%rbp),%rsi
+    1243:	48 c7 06 00 00 00 00 	movq   $0x0,(%rsi)
+    124a:	4c 8d 46 08          	lea    0x8(%rsi),%r8
+    124e:	48 83 fa 01          	cmp    $0x1,%rdx
+    1252:	74 68                	je     12bc <main+0x26c>
+    1254:	48 c7 46 08 00 00 00 	movq   $0x0,0x8(%rsi)
+    125b:	00 
+    125c:	4c 8d 46 10          	lea    0x10(%rsi),%r8
+    1260:	48 8d 48 fd          	lea    -0x3(%rax),%rcx
+    1264:	48 83 fa 02          	cmp    $0x2,%rdx
+    1268:	74 52                	je     12bc <main+0x26c>
+    126a:	48 c7 46 10 00 00 00 	movq   $0x0,0x10(%rsi)
+    1271:	00 
+    1272:	4c 8d 46 18          	lea    0x18(%rsi),%r8
+    1276:	48 8d 48 fc          	lea    -0x4(%rax),%rcx
+    127a:	48 83 fa 03          	cmp    $0x3,%rdx
+    127e:	74 3c                	je     12bc <main+0x26c>
+    1280:	48 c7 46 18 00 00 00 	movq   $0x0,0x18(%rsi)
+    1287:	00 
+    1288:	4c 8d 46 20          	lea    0x20(%rsi),%r8
+    128c:	48 8d 48 fb          	lea    -0x5(%rax),%rcx
+    1290:	48 83 fa 04          	cmp    $0x4,%rdx
+    1294:	74 26                	je     12bc <main+0x26c>
+    1296:	48 c7 46 20 00 00 00 	movq   $0x0,0x20(%rsi)
+    129d:	00 
+    129e:	4c 8d 46 28          	lea    0x28(%rsi),%r8
+    12a2:	48 8d 48 fa          	lea    -0x6(%rax),%rcx
+    12a6:	48 83 fa 05          	cmp    $0x5,%rdx
+    12aa:	74 10                	je     12bc <main+0x26c>
+    12ac:	48 c7 46 28 00 00 00 	movq   $0x0,0x28(%rsi)
+    12b3:	00 
+    12b4:	4c 8d 46 30          	lea    0x30(%rsi),%r8
+    12b8:	48 8d 48 f9          	lea    -0x7(%rax),%rcx
+    12bc:	48 39 d0             	cmp    %rdx,%rax
+    12bf:	74 70                	je     1331 <main+0x2e1>
+    12c1:	48 29 d0             	sub    %rdx,%rax
+    12c4:	48 29 d7             	sub    %rdx,%rdi
+    12c7:	48 8d 70 fc          	lea    -0x4(%rax),%rsi
+    12cb:	48 c1 ee 02          	shr    $0x2,%rsi
+    12cf:	48 83 c6 01          	add    $0x1,%rsi
+    12d3:	4c 8d 0c b5 00 00 00 	lea    0x0(,%rsi,4),%r9
+    12da:	00 
+    12db:	48 83 ff 02          	cmp    $0x2,%rdi
+    12df:	76 2e                	jbe    130f <main+0x2bf>
+    12e1:	48 8b 9d 48 ff ff ff 	mov    -0xb8(%rbp),%rbx
+    12e8:	c5 f9 ef c0          	vpxor  %xmm0,%xmm0,%xmm0
+    12ec:	48 8d 3c d3          	lea    (%rbx,%rdx,8),%rdi
+    12f0:	31 d2                	xor    %edx,%edx
+    12f2:	48 83 c2 01          	add    $0x1,%rdx
+    12f6:	c5 fd 7f 07          	vmovdqa %ymm0,(%rdi)
+    12fa:	48 83 c7 20          	add    $0x20,%rdi
+    12fe:	48 39 d6             	cmp    %rdx,%rsi
+    1301:	77 ef                	ja     12f2 <main+0x2a2>
+    1303:	4f 8d 04 c8          	lea    (%r8,%r9,8),%r8
+    1307:	4c 29 c9             	sub    %r9,%rcx
+    130a:	4c 39 c8             	cmp    %r9,%rax
+    130d:	74 22                	je     1331 <main+0x2e1>
+    130f:	49 c7 00 00 00 00 00 	movq   $0x0,(%r8)
+    1316:	48 85 c9             	test   %rcx,%rcx
+    1319:	74 16                	je     1331 <main+0x2e1>
+    131b:	48 83 e9 01          	sub    $0x1,%rcx
+    131f:	49 c7 40 08 00 00 00 	movq   $0x0,0x8(%r8)
+    1326:	00 
+    1327:	74 08                	je     1331 <main+0x2e1>
+    1329:	49 c7 40 10 00 00 00 	movq   $0x0,0x10(%r8)
+    1330:	00 
+    1331:	48 8b 8d 50 ff ff ff 	mov    -0xb0(%rbp),%rcx
+    1338:	48 89 c8             	mov    %rcx,%rax
+    133b:	48 03 85 40 ff ff ff 	add    -0xc0(%rbp),%rax
+    1342:	48 89 45 80          	mov    %rax,-0x80(%rbp)
+    1346:	48 39 c1             	cmp    %rax,%rcx
+    1349:	0f 84 cd 04 00 00    	je     181c <main+0x7cc>
+    134f:	49 89 cc             	mov    %rcx,%r12
+    1352:	48 8d 3d c7 07 00 00 	lea    0x7c7(%rip),%rdi        # 1b20 <pusher()>
+    1359:	c5 f8 77             	vzeroupper 
+    135c:	e8 df 08 00 00       	callq  1c40 <void (&std::forward<void (&)()>(std::remove_reference<void (&)()>::type&))()>
+    1361:	48 8d 7d b0          	lea    -0x50(%rbp),%rdi
+    1365:	48 89 c3             	mov    %rax,%rbx
+    1368:	e8 13 09 00 00       	callq  1c80 <std::_Bind_simple<void (*())()>&& std::forward<std::_Bind_simple<void (*())()> >(std::remove_reference<std::_Bind_simple<void (*())()> >::type&)>
+    136d:	48 89 df             	mov    %rbx,%rdi
+    1370:	48 8d 5d c0          	lea    -0x40(%rbp),%rbx
+    1374:	48 89 85 60 ff ff ff 	mov    %rax,-0xa0(%rbp)
+    137b:	e8 c0 08 00 00       	callq  1c40 <void (&std::forward<void (&)()>(std::remove_reference<void (&)()>::type&))()>
+    1380:	48 89 df             	mov    %rbx,%rdi
+    1383:	48 89 85 68 ff ff ff 	mov    %rax,-0x98(%rbp)
+    138a:	e8 c1 08 00 00       	callq  1c50 <std::_Maybe_wrap_member_pointer<void (*)()>::__do_wrap(void (*&&)())>
+    138f:	48 89 c7             	mov    %rax,%rdi
+    1392:	e8 d9 08 00 00       	callq  1c70 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    1397:	48 89 c7             	mov    %rax,%rdi
+    139a:	e8 d1 08 00 00       	callq  1c70 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    139f:	48 89 c7             	mov    %rax,%rdi
+    13a2:	e8 c9 08 00 00       	callq  1c70 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    13a7:	48 89 c7             	mov    %rax,%rdi
+    13aa:	e8 c1 08 00 00       	callq  1c70 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    13af:	48 8b 8d 40 ff ff ff 	mov    -0xc0(%rbp),%rcx
+    13b6:	49 89 c7             	mov    %rax,%r15
+    13b9:	48 8b 85 48 ff ff ff 	mov    -0xb8(%rbp),%rax
+    13c0:	48 01 c8             	add    %rcx,%rax
+    13c3:	48 89 85 58 ff ff ff 	mov    %rax,-0xa8(%rbp)
+    13ca:	48 8d 45 a0          	lea    -0x60(%rbp),%rax
+    13ce:	48 89 45 88          	mov    %rax,-0x78(%rbp)
+    13d2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    13d8:	48 8b 85 68 ff ff ff 	mov    -0x98(%rbp),%rax
+    13df:	bf 10 00 00 00       	mov    $0x10,%edi
+    13e4:	48 c7 45 a0 00 00 00 	movq   $0x0,-0x60(%rbp)
+    13eb:	00 
+    13ec:	4c 8b b5 58 ff ff ff 	mov    -0xa8(%rbp),%r14
+    13f3:	48 89 45 c0          	mov    %rax,-0x40(%rbp)
+    13f7:	49 8b 07             	mov    (%r15),%rax
+    13fa:	48 89 45 b0          	mov    %rax,-0x50(%rbp)
+    13fe:	e8 dd fb ff ff       	callq  fe0 <operator new(unsigned long)@plt>
+    1403:	49 89 c5             	mov    %rax,%r13
+    1406:	48 8d 05 43 19 20 00 	lea    0x201943(%rip),%rax        # 202d50 <vtable for std::thread::_State_impl<std::_Bind_simple<void (*())()> >+0x10>
+    140d:	48 8b bd 60 ff ff ff 	mov    -0xa0(%rbp),%rdi
+    1414:	49 89 45 00          	mov    %rax,0x0(%r13)
+    1418:	e8 63 08 00 00       	callq  1c80 <std::_Bind_simple<void (*())()>&& std::forward<std::_Bind_simple<void (*())()> >(std::remove_reference<std::_Bind_simple<void (*())()> >::type&)>
+    141d:	48 89 c7             	mov    %rax,%rdi
+    1420:	e8 3b 08 00 00       	callq  1c60 <std::_Tuple_impl<0ul, void (*)()>::_M_head(std::_Tuple_impl<0ul, void (*)()>&)>
+    1425:	48 89 c7             	mov    %rax,%rdi
+    1428:	e8 43 08 00 00       	callq  1c70 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    142d:	48 89 c7             	mov    %rax,%rdi
+    1430:	e8 3b 08 00 00       	callq  1c70 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    1435:	48 89 df             	mov    %rbx,%rdi
+    1438:	48 c7 45 c0 00 00 00 	movq   $0x0,-0x40(%rbp)
+    143f:	00 
+    1440:	48 8b 00             	mov    (%rax),%rax
+    1443:	49 89 45 08          	mov    %rax,0x8(%r13)
+    1447:	e8 44 08 00 00       	callq  1c90 <std::tuple_element<0ul, std::tuple<std::thread::_State*, std::default_delete<std::thread::_State> > >::type& std::get<0ul, std::thread::_State*, std::default_delete<std::thread::_State> >(std::tuple<std::thread::_State*, std::default_delete<std::thread::_State> >&)>
+    144c:	48 8b 15 7d 1b 20 00 	mov    0x201b7d(%rip),%rdx        # 202fd0 <pthread_create@GLIBC_2.2.5>
+    1453:	48 8b 7d 88          	mov    -0x78(%rbp),%rdi
+    1457:	48 89 de             	mov    %rbx,%rsi
+    145a:	4c 89 28             	mov    %r13,(%rax)
+    145d:	49 89 c6             	mov    %rax,%r14
+    1460:	e8 5b fb ff ff       	callq  fc0 <std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)())@plt>
+    1465:	49 8b 3e             	mov    (%r14),%rdi
+    1468:	48 85 ff             	test   %rdi,%rdi
+    146b:	74 06                	je     1473 <main+0x423>
+    146d:	48 8b 07             	mov    (%rdi),%rax
+    1470:	ff 50 08             	callq  *0x8(%rax)
+    1473:	49 c7 06 00 00 00 00 	movq   $0x0,(%r14)
+    147a:	49 8b 3c 24          	mov    (%r12),%rdi
+    147e:	31 f6                	xor    %esi,%esi
+    1480:	e8 ab 05 00 00       	callq  1a30 <std::operator==(std::thread::id, std::thread::id) [clone .constprop.12]>
+    1485:	84 c0                	test   %al,%al
+    1487:	0f 84 8a 03 00 00    	je     1817 <main+0x7c7>
+    148d:	4c 89 e7             	mov    %r12,%rdi
+    1490:	e8 9b 07 00 00       	callq  1c30 <std::remove_reference<std::thread::id&>::type&& std::move<std::thread::id&>(std::thread::id&)>
+    1495:	48 8b 7d 88          	mov    -0x78(%rbp),%rdi
+    1499:	48 8b 00             	mov    (%rax),%rax
+    149c:	48 89 45 c0          	mov    %rax,-0x40(%rbp)
+    14a0:	e8 8b 07 00 00       	callq  1c30 <std::remove_reference<std::thread::id&>::type&& std::move<std::thread::id&>(std::thread::id&)>
+    14a5:	48 89 df             	mov    %rbx,%rdi
+    14a8:	48 8b 00             	mov    (%rax),%rax
+    14ab:	49 89 04 24          	mov    %rax,(%r12)
+    14af:	e8 7c 07 00 00       	callq  1c30 <std::remove_reference<std::thread::id&>::type&& std::move<std::thread::id&>(std::thread::id&)>
+    14b4:	31 f6                	xor    %esi,%esi
+    14b6:	48 8b 38             	mov    (%rax),%rdi
+    14b9:	48 89 7d a0          	mov    %rdi,-0x60(%rbp)
+    14bd:	e8 6e 05 00 00       	callq  1a30 <std::operator==(std::thread::id, std::thread::id) [clone .constprop.12]>
+    14c2:	84 c0                	test   %al,%al
+    14c4:	0f 84 4d 03 00 00    	je     1817 <main+0x7c7>
+    14ca:	49 83 c4 08          	add    $0x8,%r12
+    14ce:	4c 39 65 80          	cmp    %r12,-0x80(%rbp)
+    14d2:	0f 85 00 ff ff ff    	jne    13d8 <main+0x388>
+    14d8:	4c 8b b5 40 ff ff ff 	mov    -0xc0(%rbp),%r14
+    14df:	48 8b 85 48 ff ff ff 	mov    -0xb8(%rbp),%rax
+    14e6:	49 01 c6             	add    %rax,%r14
+    14e9:	4c 89 b5 40 ff ff ff 	mov    %r14,-0xc0(%rbp)
+    14f0:	49 39 c6             	cmp    %rax,%r14
+    14f3:	0f 84 6f 01 00 00    	je     1668 <main+0x618>
+    14f9:	48 8d 3d 40 05 00 00 	lea    0x540(%rip),%rdi        # 1a40 <popper()>
+    1500:	e8 3b 07 00 00       	callq  1c40 <void (&std::forward<void (&)()>(std::remove_reference<void (&)()>::type&))()>
+    1505:	48 8d 7d b8          	lea    -0x48(%rbp),%rdi
+    1509:	49 89 c4             	mov    %rax,%r12
+    150c:	e8 6f 07 00 00       	callq  1c80 <std::_Bind_simple<void (*())()>&& std::forward<std::_Bind_simple<void (*())()> >(std::remove_reference<std::_Bind_simple<void (*())()> >::type&)>
+    1511:	4c 89 e7             	mov    %r12,%rdi
+    1514:	48 89 85 68 ff ff ff 	mov    %rax,-0x98(%rbp)
+    151b:	e8 20 07 00 00       	callq  1c40 <void (&std::forward<void (&)()>(std::remove_reference<void (&)()>::type&))()>
+    1520:	48 89 df             	mov    %rbx,%rdi
+    1523:	48 89 85 60 ff ff ff 	mov    %rax,-0xa0(%rbp)
+    152a:	e8 21 07 00 00       	callq  1c50 <std::_Maybe_wrap_member_pointer<void (*)()>::__do_wrap(void (*&&)())>
+    152f:	48 89 c7             	mov    %rax,%rdi
+    1532:	e8 39 07 00 00       	callq  1c70 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    1537:	48 89 c7             	mov    %rax,%rdi
+    153a:	e8 31 07 00 00       	callq  1c70 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    153f:	48 89 c7             	mov    %rax,%rdi
+    1542:	e8 29 07 00 00       	callq  1c70 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    1547:	48 89 c7             	mov    %rax,%rdi
+    154a:	e8 21 07 00 00       	callq  1c70 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    154f:	4c 8b a5 78 ff ff ff 	mov    -0x88(%rbp),%r12
+    1556:	48 89 85 58 ff ff ff 	mov    %rax,-0xa8(%rbp)
+    155d:	48 8d 45 a8          	lea    -0x58(%rbp),%rax
+    1561:	48 89 45 88          	mov    %rax,-0x78(%rbp)
+    1565:	0f 1f 00             	nopl   (%rax)
+    1568:	48 8b 85 60 ff ff ff 	mov    -0xa0(%rbp),%rax
+    156f:	bf 10 00 00 00       	mov    $0x10,%edi
+    1574:	48 c7 45 a8 00 00 00 	movq   $0x0,-0x58(%rbp)
+    157b:	00 
+    157c:	48 89 45 c0          	mov    %rax,-0x40(%rbp)
+    1580:	48 8b 85 58 ff ff ff 	mov    -0xa8(%rbp),%rax
+    1587:	48 8b 00             	mov    (%rax),%rax
+    158a:	48 89 45 b8          	mov    %rax,-0x48(%rbp)
+    158e:	e8 4d fa ff ff       	callq  fe0 <operator new(unsigned long)@plt>
+    1593:	49 89 c7             	mov    %rax,%r15
+    1596:	48 8d 05 b3 17 20 00 	lea    0x2017b3(%rip),%rax        # 202d50 <vtable for std::thread::_State_impl<std::_Bind_simple<void (*())()> >+0x10>
+    159d:	48 8b bd 68 ff ff ff 	mov    -0x98(%rbp),%rdi
+    15a4:	49 89 07             	mov    %rax,(%r15)
+    15a7:	e8 d4 06 00 00       	callq  1c80 <std::_Bind_simple<void (*())()>&& std::forward<std::_Bind_simple<void (*())()> >(std::remove_reference<std::_Bind_simple<void (*())()> >::type&)>
+    15ac:	48 89 c7             	mov    %rax,%rdi
+    15af:	e8 ac 06 00 00       	callq  1c60 <std::_Tuple_impl<0ul, void (*)()>::_M_head(std::_Tuple_impl<0ul, void (*)()>&)>
+    15b4:	48 89 c7             	mov    %rax,%rdi
+    15b7:	e8 b4 06 00 00       	callq  1c70 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    15bc:	48 89 c7             	mov    %rax,%rdi
+    15bf:	e8 ac 06 00 00       	callq  1c70 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    15c4:	48 89 df             	mov    %rbx,%rdi
+    15c7:	48 c7 45 c0 00 00 00 	movq   $0x0,-0x40(%rbp)
+    15ce:	00 
+    15cf:	48 8b 00             	mov    (%rax),%rax
+    15d2:	49 89 47 08          	mov    %rax,0x8(%r15)
+    15d6:	e8 b5 06 00 00       	callq  1c90 <std::tuple_element<0ul, std::tuple<std::thread::_State*, std::default_delete<std::thread::_State> > >::type& std::get<0ul, std::thread::_State*, std::default_delete<std::thread::_State> >(std::tuple<std::thread::_State*, std::default_delete<std::thread::_State> >&)>
+    15db:	48 8b 15 ee 19 20 00 	mov    0x2019ee(%rip),%rdx        # 202fd0 <pthread_create@GLIBC_2.2.5>
+    15e2:	48 8b 7d 88          	mov    -0x78(%rbp),%rdi
+    15e6:	48 89 de             	mov    %rbx,%rsi
+    15e9:	4c 89 38             	mov    %r15,(%rax)
+    15ec:	49 89 c5             	mov    %rax,%r13
+    15ef:	e8 cc f9 ff ff       	callq  fc0 <std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)())@plt>
+    15f4:	49 8b 7d 00          	mov    0x0(%r13),%rdi
+    15f8:	48 85 ff             	test   %rdi,%rdi
+    15fb:	74 06                	je     1603 <main+0x5b3>
+    15fd:	48 8b 07             	mov    (%rdi),%rax
+    1600:	ff 50 08             	callq  *0x8(%rax)
+    1603:	49 c7 45 00 00 00 00 	movq   $0x0,0x0(%r13)
+    160a:	00 
+    160b:	49 8b 3c 24          	mov    (%r12),%rdi
+    160f:	31 f6                	xor    %esi,%esi
+    1611:	e8 1a 04 00 00       	callq  1a30 <std::operator==(std::thread::id, std::thread::id) [clone .constprop.12]>
+    1616:	84 c0                	test   %al,%al
+    1618:	0f 84 f9 01 00 00    	je     1817 <main+0x7c7>
+    161e:	4c 89 e7             	mov    %r12,%rdi
+    1621:	e8 0a 06 00 00       	callq  1c30 <std::remove_reference<std::thread::id&>::type&& std::move<std::thread::id&>(std::thread::id&)>
+    1626:	48 8b 7d 88          	mov    -0x78(%rbp),%rdi
+    162a:	48 8b 00             	mov    (%rax),%rax
+    162d:	48 89 45 c0          	mov    %rax,-0x40(%rbp)
+    1631:	e8 fa 05 00 00       	callq  1c30 <std::remove_reference<std::thread::id&>::type&& std::move<std::thread::id&>(std::thread::id&)>
+    1636:	48 89 df             	mov    %rbx,%rdi
+    1639:	48 8b 00             	mov    (%rax),%rax
+    163c:	49 89 04 24          	mov    %rax,(%r12)
+    1640:	e8 eb 05 00 00       	callq  1c30 <std::remove_reference<std::thread::id&>::type&& std::move<std::thread::id&>(std::thread::id&)>
+    1645:	31 f6                	xor    %esi,%esi
+    1647:	48 8b 38             	mov    (%rax),%rdi
+    164a:	48 89 7d a8          	mov    %rdi,-0x58(%rbp)
+    164e:	e8 dd 03 00 00       	callq  1a30 <std::operator==(std::thread::id, std::thread::id) [clone .constprop.12]>
+    1653:	84 c0                	test   %al,%al
+    1655:	0f 84 bc 01 00 00    	je     1817 <main+0x7c7>
+    165b:	49 83 c4 08          	add    $0x8,%r12
+    165f:	4d 39 e6             	cmp    %r12,%r14
+    1662:	0f 85 00 ff ff ff    	jne    1568 <main+0x518>
+    1668:	c5 f9 6f 05 70 07 00 	vmovdqa 0x770(%rip),%xmm0        # 1de0 <typeinfo name for std::thread::_State_impl<std::_Bind_simple<void (*())()> >+0x40>
+    166f:	00 
+    1670:	c5 f8 29 45 c0       	vmovaps %xmm0,-0x40(%rbp)
+    1675:	48 89 de             	mov    %rbx,%rsi
+    1678:	48 89 df             	mov    %rbx,%rdi
+    167b:	e8 f0 f8 ff ff       	callq  f70 <nanosleep@plt>
+    1680:	83 f8 ff             	cmp    $0xffffffff,%eax
+    1683:	0f 84 2f 01 00 00    	je     17b8 <main+0x768>
+    1689:	c6 05 10 1a 20 00 00 	movb   $0x0,0x201a10(%rip)        # 2030a0 <run>
+    1690:	0f ae f0             	mfence 
+    1693:	48 8b 4d 80          	mov    -0x80(%rbp),%rcx
+    1697:	48 39 8d 50 ff ff ff 	cmp    %rcx,-0xb0(%rbp)
+    169e:	74 23                	je     16c3 <main+0x673>
+    16a0:	48 8b 9d 70 ff ff ff 	mov    -0x90(%rbp),%rbx
+    16a7:	48 89 df             	mov    %rbx,%rdi
+    16aa:	e8 71 f9 ff ff       	callq  1020 <std::thread::join()@plt>
+    16af:	48 89 d8             	mov    %rbx,%rax
+    16b2:	48 83 c0 08          	add    $0x8,%rax
+    16b6:	48 89 85 70 ff ff ff 	mov    %rax,-0x90(%rbp)
+    16bd:	48 39 45 80          	cmp    %rax,-0x80(%rbp)
+    16c1:	75 dd                	jne    16a0 <main+0x650>
+    16c3:	4c 3b b5 48 ff ff ff 	cmp    -0xb8(%rbp),%r14
+    16ca:	74 26                	je     16f2 <main+0x6a2>
+    16cc:	0f 1f 40 00          	nopl   0x0(%rax)
+    16d0:	48 8b 9d 78 ff ff ff 	mov    -0x88(%rbp),%rbx
+    16d7:	48 89 df             	mov    %rbx,%rdi
+    16da:	e8 41 f9 ff ff       	callq  1020 <std::thread::join()@plt>
+    16df:	48 89 d8             	mov    %rbx,%rax
+    16e2:	48 83 c0 08          	add    $0x8,%rax
+    16e6:	48 89 85 78 ff ff ff 	mov    %rax,-0x88(%rbp)
+    16ed:	49 39 c6             	cmp    %rax,%r14
+    16f0:	75 de                	jne    16d0 <main+0x680>
+    16f2:	8b 1d 78 1b 20 00    	mov    0x201b78(%rip),%ebx        # 203270 <pop>
+    16f8:	8b 35 76 1b 20 00    	mov    0x201b76(%rip),%esi        # 203274 <push>
+    16fe:	48 8d 3d 3b 1a 20 00 	lea    0x201a3b(%rip),%rdi        # 203140 <std::cout@@GLIBCXX_3.4>
+    1705:	e8 96 f8 ff ff       	callq  fa0 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@plt>
+    170a:	48 8d 75 9f          	lea    -0x61(%rbp),%rsi
+    170e:	ba 01 00 00 00       	mov    $0x1,%edx
+    1713:	48 89 c7             	mov    %rax,%rdi
+    1716:	c6 45 9f 20          	movb   $0x20,-0x61(%rbp)
+    171a:	e8 d1 f8 ff ff       	callq  ff0 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    171f:	89 de                	mov    %ebx,%esi
+    1721:	48 89 c7             	mov    %rax,%rdi
+    1724:	e8 77 f8 ff ff       	callq  fa0 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@plt>
+    1729:	48 89 c7             	mov    %rax,%rdi
+    172c:	e8 5f f8 ff ff       	callq  f90 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@plt>
+    1731:	4c 3b b5 48 ff ff ff 	cmp    -0xb8(%rbp),%r14
+    1738:	74 31                	je     176b <main+0x71b>
+    173a:	48 8b 95 40 ff ff ff 	mov    -0xc0(%rbp),%rdx
+    1741:	48 8b 8d 48 ff ff ff 	mov    -0xb8(%rbp),%rcx
+    1748:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    174f:	00 
+    1750:	48 83 ea 08          	sub    $0x8,%rdx
+    1754:	48 8b 3a             	mov    (%rdx),%rdi
+    1757:	31 f6                	xor    %esi,%esi
+    1759:	e8 d2 02 00 00       	callq  1a30 <std::operator==(std::thread::id, std::thread::id) [clone .constprop.12]>
+    175e:	84 c0                	test   %al,%al
+    1760:	0f 84 b1 00 00 00    	je     1817 <main+0x7c7>
+    1766:	48 39 ca             	cmp    %rcx,%rdx
+    1769:	75 e5                	jne    1750 <main+0x700>
+    176b:	48 8b 4d 80          	mov    -0x80(%rbp),%rcx
+    176f:	48 39 8d 50 ff ff ff 	cmp    %rcx,-0xb0(%rbp)
+    1776:	74 27                	je     179f <main+0x74f>
+    1778:	48 89 ca             	mov    %rcx,%rdx
+    177b:	48 8b 8d 50 ff ff ff 	mov    -0xb0(%rbp),%rcx
+    1782:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    1788:	48 83 ea 08          	sub    $0x8,%rdx
+    178c:	48 8b 3a             	mov    (%rdx),%rdi
+    178f:	31 f6                	xor    %esi,%esi
+    1791:	e8 9a 02 00 00       	callq  1a30 <std::operator==(std::thread::id, std::thread::id) [clone .constprop.12]>
+    1796:	84 c0                	test   %al,%al
+    1798:	74 7d                	je     1817 <main+0x7c7>
+    179a:	48 39 d1             	cmp    %rdx,%rcx
+    179d:	75 e9                	jne    1788 <main+0x738>
+    179f:	48 8d 65 d0          	lea    -0x30(%rbp),%rsp
+    17a3:	31 c0                	xor    %eax,%eax
+    17a5:	5b                   	pop    %rbx
+    17a6:	41 5a                	pop    %r10
+    17a8:	41 5c                	pop    %r12
+    17aa:	41 5d                	pop    %r13
+    17ac:	41 5e                	pop    %r14
+    17ae:	41 5f                	pop    %r15
+    17b0:	5d                   	pop    %rbp
+    17b1:	c3                   	retq   
+    17b2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    17b8:	e8 93 f7 ff ff       	callq  f50 <__errno_location@plt>
+    17bd:	83 38 04             	cmpl   $0x4,(%rax)
+    17c0:	0f 85 c3 fe ff ff    	jne    1689 <main+0x639>
+    17c6:	e9 aa fe ff ff       	jmpq   1675 <main+0x625>
+    17cb:	4c 89 ca             	mov    %r9,%rdx
+    17ce:	48 c1 ea 04          	shr    $0x4,%rdx
+    17d2:	48 c1 e2 04          	shl    $0x4,%rdx
+    17d6:	48 29 d4             	sub    %rdx,%rsp
+    17d9:	48 89 c2             	mov    %rax,%rdx
+    17dc:	48 89 a5 48 ff ff ff 	mov    %rsp,-0xb8(%rbp)
+    17e3:	48 89 a5 78 ff ff ff 	mov    %rsp,-0x88(%rbp)
+    17ea:	e9 4d fa ff ff       	jmpq   123c <main+0x1ec>
+    17ef:	49 89 fb             	mov    %rdi,%r11
+    17f2:	49 89 c8             	mov    %rcx,%r8
+    17f5:	48 85 d2             	test   %rdx,%rdx
+    17f8:	0f 84 89 f9 ff ff    	je     1187 <main+0x137>
+    17fe:	e9 df f8 ff ff       	jmpq   10e2 <main+0x92>
+    1803:	48 89 f9             	mov    %rdi,%rcx
+    1806:	49 89 e0             	mov    %rsp,%r8
+    1809:	48 85 d2             	test   %rdx,%rdx
+    180c:	0f 84 af fa ff ff    	je     12c1 <main+0x271>
+    1812:	e9 21 fa ff ff       	jmpq   1238 <main+0x1e8>
+    1817:	e8 44 f7 ff ff       	callq  f60 <std::terminate()@plt>
+    181c:	48 8d 5d c0          	lea    -0x40(%rbp),%rbx
+    1820:	c5 f8 77             	vzeroupper 
+    1823:	e9 b0 fc ff ff       	jmpq   14d8 <main+0x488>
+    1828:	49 89 c4             	mov    %rax,%r12
+    182b:	48 89 df             	mov    %rbx,%rdi
+    182e:	c5 f8 77             	vzeroupper 
+    1831:	e8 6a 04 00 00       	callq  1ca0 <std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >::~unique_ptr()>
+    1836:	48 8b 85 48 ff ff ff 	mov    -0xb8(%rbp),%rax
+    183d:	48 8b 8d 40 ff ff ff 	mov    -0xc0(%rbp),%rcx
+    1844:	4c 8d 34 08          	lea    (%rax,%rcx,1),%r14
+    1848:	4c 3b b5 48 ff ff ff 	cmp    -0xb8(%rbp),%r14
+    184f:	74 26                	je     1877 <main+0x827>
+    1851:	49 83 ee 08          	sub    $0x8,%r14
+    1855:	4c 89 f7             	mov    %r14,%rdi
+    1858:	e8 b3 03 00 00       	callq  1c10 <std::thread::~thread()>
+    185d:	eb e9                	jmp    1848 <main+0x7f8>
+    185f:	49 89 c4             	mov    %rax,%r12
+    1862:	c5 f8 77             	vzeroupper 
+    1865:	eb e1                	jmp    1848 <main+0x7f8>
+    1867:	49 89 c4             	mov    %rax,%r12
+    186a:	48 89 df             	mov    %rbx,%rdi
+    186d:	c5 f8 77             	vzeroupper 
+    1870:	e8 2b 04 00 00       	callq  1ca0 <std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >::~unique_ptr()>
+    1875:	eb d1                	jmp    1848 <main+0x7f8>
+    1877:	48 8b 5d 80          	mov    -0x80(%rbp),%rbx
+    187b:	48 3b 9d 50 ff ff ff 	cmp    -0xb0(%rbp),%rbx
+    1882:	74 0e                	je     1892 <main+0x842>
+    1884:	48 83 eb 08          	sub    $0x8,%rbx
+    1888:	48 89 df             	mov    %rbx,%rdi
+    188b:	e8 80 03 00 00       	callq  1c10 <std::thread::~thread()>
+    1890:	eb e9                	jmp    187b <main+0x82b>
+    1892:	4c 89 e7             	mov    %r12,%rdi
+    1895:	e8 96 f7 ff ff       	callq  1030 <_Unwind_Resume@plt>
+    189a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000018a0 <_GLOBAL__sub_I_run>:
+    18a0:	48 83 ec 08          	sub    $0x8,%rsp
+    18a4:	48 8d 3d cd 19 20 00 	lea    0x2019cd(%rip),%rdi        # 203278 <std::__ioinit>
+    18ab:	e8 60 f7 ff ff       	callq  1010 <std::ios_base::Init::Init()@plt>
+    18b0:	48 8b 3d 41 17 20 00 	mov    0x201741(%rip),%rdi        # 202ff8 <std::ios_base::Init::~Init()@GLIBCXX_3.4>
+    18b7:	48 8d 15 da 17 20 00 	lea    0x2017da(%rip),%rdx        # 203098 <__dso_handle>
+    18be:	48 8d 35 b3 19 20 00 	lea    0x2019b3(%rip),%rsi        # 203278 <std::__ioinit>
+    18c5:	e8 e6 f6 ff ff       	callq  fb0 <__cxa_atexit@plt>
+    18ca:	48 c7 05 8b 19 20 00 	movq   $0x0,0x20198b(%rip)        # 203260 <s>
+    18d1:	00 00 00 00 
+    18d5:	48 c7 05 88 19 20 00 	movq   $0x0,0x201988(%rip)        # 203268 <s+0x8>
+    18dc:	00 00 00 00 
+    18e0:	48 83 c4 08          	add    $0x8,%rsp
+    18e4:	c3                   	retq   
+    18e5:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    18ec:	00 00 00 
+    18ef:	90                   	nop
+
+00000000000018f0 <_start>:
+    18f0:	31 ed                	xor    %ebp,%ebp
+    18f2:	49 89 d1             	mov    %rdx,%r9
+    18f5:	5e                   	pop    %rsi
+    18f6:	48 89 e2             	mov    %rsp,%rdx
+    18f9:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    18fd:	50                   	push   %rax
+    18fe:	54                   	push   %rsp
+    18ff:	4c 8d 05 5a 04 00 00 	lea    0x45a(%rip),%r8        # 1d60 <__libc_csu_fini>
+    1906:	48 8d 0d e3 03 00 00 	lea    0x3e3(%rip),%rcx        # 1cf0 <__libc_csu_init>
+    190d:	48 8d 3d 3c f7 ff ff 	lea    -0x8c4(%rip),%rdi        # 1050 <main>
+    1914:	ff 15 ce 16 20 00    	callq  *0x2016ce(%rip)        # 202fe8 <__libc_start_main@GLIBC_2.2.5>
+    191a:	f4                   	hlt    
+    191b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001920 <deregister_tm_clones>:
+    1920:	48 8d 3d 89 17 20 00 	lea    0x201789(%rip),%rdi        # 2030b0 <__TMC_LIST__>
+    1927:	48 8d 05 19 18 20 00 	lea    0x201819(%rip),%rax        # 203147 <__TMC_END__+0x7>
+    192e:	55                   	push   %rbp
+    192f:	48 29 f8             	sub    %rdi,%rax
+    1932:	48 89 e5             	mov    %rsp,%rbp
+    1935:	48 83 f8 0e          	cmp    $0xe,%rax
+    1939:	76 15                	jbe    1950 <deregister_tm_clones+0x30>
+    193b:	48 8b 05 86 16 20 00 	mov    0x201686(%rip),%rax        # 202fc8 <_ITM_deregisterTMCloneTable@LIBITM_1.0>
+    1942:	48 85 c0             	test   %rax,%rax
+    1945:	74 09                	je     1950 <deregister_tm_clones+0x30>
+    1947:	5d                   	pop    %rbp
+    1948:	ff e0                	jmpq   *%rax
+    194a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    1950:	5d                   	pop    %rbp
+    1951:	c3                   	retq   
+    1952:	0f 1f 40 00          	nopl   0x0(%rax)
+    1956:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    195d:	00 00 00 
+
+0000000000001960 <register_tm_clones>:
+    1960:	48 8d 3d 49 17 20 00 	lea    0x201749(%rip),%rdi        # 2030b0 <__TMC_LIST__>
+    1967:	48 8d 35 d2 17 20 00 	lea    0x2017d2(%rip),%rsi        # 203140 <std::cout@@GLIBCXX_3.4>
+    196e:	55                   	push   %rbp
+    196f:	48 29 fe             	sub    %rdi,%rsi
+    1972:	48 89 e5             	mov    %rsp,%rbp
+    1975:	48 c1 fe 03          	sar    $0x3,%rsi
+    1979:	48 89 f0             	mov    %rsi,%rax
+    197c:	48 c1 e8 3f          	shr    $0x3f,%rax
+    1980:	48 01 c6             	add    %rax,%rsi
+    1983:	48 d1 fe             	sar    %rsi
+    1986:	74 18                	je     19a0 <register_tm_clones+0x40>
+    1988:	48 8b 05 49 16 20 00 	mov    0x201649(%rip),%rax        # 202fd8 <_ITM_registerTMCloneTable@LIBITM_1.0>
+    198f:	48 85 c0             	test   %rax,%rax
+    1992:	74 0c                	je     19a0 <register_tm_clones+0x40>
+    1994:	5d                   	pop    %rbp
+    1995:	ff e0                	jmpq   *%rax
+    1997:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    199e:	00 00 
+    19a0:	5d                   	pop    %rbp
+    19a1:	c3                   	retq   
+    19a2:	0f 1f 40 00          	nopl   0x0(%rax)
+    19a6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    19ad:	00 00 00 
+
+00000000000019b0 <__do_global_dtors_aux>:
+    19b0:	80 3d 99 18 20 00 00 	cmpb   $0x0,0x201899(%rip)        # 203250 <completed.6972>
+    19b7:	75 27                	jne    19e0 <__do_global_dtors_aux+0x30>
+    19b9:	48 83 3d ff 15 20 00 	cmpq   $0x0,0x2015ff(%rip)        # 202fc0 <__cxa_finalize@GLIBC_2.2.5>
+    19c0:	00 
+    19c1:	55                   	push   %rbp
+    19c2:	48 89 e5             	mov    %rsp,%rbp
+    19c5:	74 0c                	je     19d3 <__do_global_dtors_aux+0x23>
+    19c7:	48 8b 3d ca 16 20 00 	mov    0x2016ca(%rip),%rdi        # 203098 <__dso_handle>
+    19ce:	e8 6d f6 ff ff       	callq  1040 <.plt.got>
+    19d3:	e8 48 ff ff ff       	callq  1920 <deregister_tm_clones>
+    19d8:	5d                   	pop    %rbp
+    19d9:	c6 05 70 18 20 00 01 	movb   $0x1,0x201870(%rip)        # 203250 <completed.6972>
+    19e0:	f3 c3                	repz retq 
+    19e2:	0f 1f 40 00          	nopl   0x0(%rax)
+    19e6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    19ed:	00 00 00 
+
+00000000000019f0 <frame_dummy>:
+    19f0:	48 8d 3d 41 13 20 00 	lea    0x201341(%rip),%rdi        # 202d38 <__JCR_END__>
+    19f7:	48 83 3f 00          	cmpq   $0x0,(%rdi)
+    19fb:	75 0b                	jne    1a08 <frame_dummy+0x18>
+    19fd:	e9 5e ff ff ff       	jmpq   1960 <register_tm_clones>
+    1a02:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    1a08:	48 8b 05 d1 15 20 00 	mov    0x2015d1(%rip),%rax        # 202fe0 <_Jv_RegisterClasses>
+    1a0f:	48 85 c0             	test   %rax,%rax
+    1a12:	74 e9                	je     19fd <frame_dummy+0xd>
+    1a14:	55                   	push   %rbp
+    1a15:	48 89 e5             	mov    %rsp,%rbp
+    1a18:	ff d0                	callq  *%rax
+    1a1a:	5d                   	pop    %rbp
+    1a1b:	e9 40 ff ff ff       	jmpq   1960 <register_tm_clones>
+
+0000000000001a20 <tagged::pointer<stack<int>::node>::operator stack<int>::node*() const [clone .isra.2]>:
+    1a20:	48 89 f8             	mov    %rdi,%rax
+    1a23:	c3                   	retq   
+    1a24:	66 90                	xchg   %ax,%ax
+    1a26:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1a2d:	00 00 00 
+
+0000000000001a30 <std::operator==(std::thread::id, std::thread::id) [clone .constprop.12]>:
+    1a30:	48 85 ff             	test   %rdi,%rdi
+    1a33:	0f 94 c0             	sete   %al
+    1a36:	c3                   	retq   
+    1a37:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    1a3e:	00 00 
+
+0000000000001a40 <popper()>:
+    1a40:	41 57                	push   %r15
+    1a42:	41 56                	push   %r14
+    1a44:	45 31 f6             	xor    %r14d,%r14d
+    1a47:	41 55                	push   %r13
+    1a49:	45 31 ed             	xor    %r13d,%r13d
+    1a4c:	53                   	push   %rbx
+    1a4d:	48 83 ec 28          	sub    $0x28,%rsp
+    1a51:	0f b6 05 48 16 20 00 	movzbl 0x201648(%rip),%eax        # 2030a0 <run>
+    1a58:	84 c0                	test   %al,%al
+    1a5a:	0f 84 b1 00 00 00    	je     1b11 <popper()+0xd1>
+    1a60:	48 c7 44 24 10 00 00 	movq   $0x0,0x10(%rsp)
+    1a67:	00 00 
+    1a69:	45 31 ff             	xor    %r15d,%r15d
+    1a6c:	48 c7 44 24 18 00 00 	movq   $0x0,0x18(%rsp)
+    1a73:	00 00 
+    1a75:	4c 89 e8             	mov    %r13,%rax
+    1a78:	4c 89 f2             	mov    %r14,%rdx
+    1a7b:	4c 89 fb             	mov    %r15,%rbx
+    1a7e:	4c 89 f9             	mov    %r15,%rcx
+    1a81:	f0 48 0f c7 0d d6 17 	lock cmpxchg16b 0x2017d6(%rip)        # 203260 <s>
+    1a88:	20 00 
+    1a8a:	48 89 c6             	mov    %rax,%rsi
+    1a8d:	48 89 d7             	mov    %rdx,%rdi
+    1a90:	48 89 7c 24 18       	mov    %rdi,0x18(%rsp)
+    1a95:	48 89 7c 24 08       	mov    %rdi,0x8(%rsp)
+    1a9a:	48 89 f7             	mov    %rsi,%rdi
+    1a9d:	48 89 74 24 10       	mov    %rsi,0x10(%rsp)
+    1aa2:	48 89 34 24          	mov    %rsi,(%rsp)
+    1aa6:	e8 75 ff ff ff       	callq  1a20 <tagged::pointer<stack<int>::node>::operator stack<int>::node*() const [clone .isra.2]>
+    1aab:	48 85 c0             	test   %rax,%rax
+    1aae:	74 42                	je     1af2 <popper()+0xb2>
+    1ab0:	48 8b 3c 24          	mov    (%rsp),%rdi
+    1ab4:	e8 67 ff ff ff       	callq  1a20 <tagged::pointer<stack<int>::node>::operator stack<int>::node*() const [clone .isra.2]>
+    1ab9:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+    1abe:	48 8b 70 08          	mov    0x8(%rax),%rsi
+    1ac2:	48 8b 18             	mov    (%rax),%rbx
+    1ac5:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+    1aca:	48 8d 4e 01          	lea    0x1(%rsi),%rcx
+    1ace:	f0 48 0f c7 0d 89 17 	lock cmpxchg16b 0x201789(%rip)        # 203260 <s>
+    1ad5:	20 00 
+    1ad7:	74 0f                	je     1ae8 <popper()+0xa8>
+    1ad9:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+    1ade:	48 89 54 24 18       	mov    %rdx,0x18(%rsp)
+    1ae3:	eb 90                	jmp    1a75 <popper()+0x35>
+    1ae5:	0f 1f 00             	nopl   (%rax)
+    1ae8:	48 8b 7c 24 10       	mov    0x10(%rsp),%rdi
+    1aed:	e8 2e ff ff ff       	callq  1a20 <tagged::pointer<stack<int>::node>::operator stack<int>::node*() const [clone .isra.2]>
+    1af2:	48 89 c7             	mov    %rax,%rdi
+    1af5:	e8 d6 f4 ff ff       	callq  fd0 <operator delete(void*)@plt>
+    1afa:	f0 83 05 6e 17 20 00 	lock addl $0x1,0x20176e(%rip)        # 203270 <pop>
+    1b01:	01 
+    1b02:	0f b6 05 97 15 20 00 	movzbl 0x201597(%rip),%eax        # 2030a0 <run>
+    1b09:	84 c0                	test   %al,%al
+    1b0b:	0f 85 4f ff ff ff    	jne    1a60 <popper()+0x20>
+    1b11:	48 83 c4 28          	add    $0x28,%rsp
+    1b15:	5b                   	pop    %rbx
+    1b16:	41 5d                	pop    %r13
+    1b18:	41 5e                	pop    %r14
+    1b1a:	41 5f                	pop    %r15
+    1b1c:	c3                   	retq   
+    1b1d:	0f 1f 00             	nopl   (%rax)
+
+0000000000001b20 <pusher()>:
+    1b20:	41 56                	push   %r14
+    1b22:	45 31 f6             	xor    %r14d,%r14d
+    1b25:	41 55                	push   %r13
+    1b27:	45 31 ed             	xor    %r13d,%r13d
+    1b2a:	53                   	push   %rbx
+    1b2b:	eb 0b                	jmp    1b38 <pusher()+0x18>
+    1b2d:	0f 1f 00             	nopl   (%rax)
+    1b30:	f0 83 05 3c 17 20 00 	lock addl $0x1,0x20173c(%rip)        # 203274 <push>
+    1b37:	01 
+    1b38:	0f b6 05 61 15 20 00 	movzbl 0x201561(%rip),%eax        # 2030a0 <run>
+    1b3f:	84 c0                	test   %al,%al
+    1b41:	74 66                	je     1ba9 <pusher()+0x89>
+    1b43:	bf 18 00 00 00       	mov    $0x18,%edi
+    1b48:	e8 93 f4 ff ff       	callq  fe0 <operator new(unsigned long)@plt>
+    1b4d:	31 ff                	xor    %edi,%edi
+    1b4f:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+    1b56:	48 89 c6             	mov    %rax,%rsi
+    1b59:	48 c7 40 08 00 00 00 	movq   $0x0,0x8(%rax)
+    1b60:	00 
+    1b61:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1b68:	4c 89 e8             	mov    %r13,%rax
+    1b6b:	4c 89 f2             	mov    %r14,%rdx
+    1b6e:	48 89 fb             	mov    %rdi,%rbx
+    1b71:	48 89 f9             	mov    %rdi,%rcx
+    1b74:	f0 48 0f c7 0d e3 16 	lock cmpxchg16b 0x2016e3(%rip)        # 203260 <s>
+    1b7b:	20 00 
+    1b7d:	48 89 d1             	mov    %rdx,%rcx
+    1b80:	48 89 06             	mov    %rax,(%rsi)
+    1b83:	48 8b 06             	mov    (%rsi),%rax
+    1b86:	48 89 f3             	mov    %rsi,%rbx
+    1b89:	48 89 56 08          	mov    %rdx,0x8(%rsi)
+    1b8d:	48 8b 56 08          	mov    0x8(%rsi),%rdx
+    1b91:	48 83 c1 01          	add    $0x1,%rcx
+    1b95:	f0 48 0f c7 0d c2 16 	lock cmpxchg16b 0x2016c2(%rip)        # 203260 <s>
+    1b9c:	20 00 
+    1b9e:	74 90                	je     1b30 <pusher()+0x10>
+    1ba0:	48 89 06             	mov    %rax,(%rsi)
+    1ba3:	48 89 56 08          	mov    %rdx,0x8(%rsi)
+    1ba7:	eb bf                	jmp    1b68 <pusher()+0x48>
+    1ba9:	5b                   	pop    %rbx
+    1baa:	41 5d                	pop    %r13
+    1bac:	41 5e                	pop    %r14
+    1bae:	c3                   	retq   
+    1baf:	90                   	nop
+
+0000000000001bb0 <std::thread::_State_impl<std::_Bind_simple<void (*())()> >::~_State_impl()>:
+    1bb0:	48 8d 05 99 11 20 00 	lea    0x201199(%rip),%rax        # 202d50 <vtable for std::thread::_State_impl<std::_Bind_simple<void (*())()> >+0x10>
+    1bb7:	48 89 07             	mov    %rax,(%rdi)
+    1bba:	e9 c1 f3 ff ff       	jmpq   f80 <std::thread::_State::~_State()@plt>
+    1bbf:	90                   	nop
+
+0000000000001bc0 <std::thread::_State_impl<std::_Bind_simple<void (*())()> >::~_State_impl()>:
+    1bc0:	48 8d 05 89 11 20 00 	lea    0x201189(%rip),%rax        # 202d50 <vtable for std::thread::_State_impl<std::_Bind_simple<void (*())()> >+0x10>
+    1bc7:	53                   	push   %rbx
+    1bc8:	48 89 fb             	mov    %rdi,%rbx
+    1bcb:	48 89 07             	mov    %rax,(%rdi)
+    1bce:	e8 ad f3 ff ff       	callq  f80 <std::thread::_State::~_State()@plt>
+    1bd3:	48 89 df             	mov    %rbx,%rdi
+    1bd6:	5b                   	pop    %rbx
+    1bd7:	e9 f4 f3 ff ff       	jmpq   fd0 <operator delete(void*)@plt>
+    1bdc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001be0 <std::__cmpexch_failure_order(std::memory_order)>:
+    1be0:	0f b7 c7             	movzwl %di,%eax
+    1be3:	83 f8 04             	cmp    $0x4,%eax
+    1be6:	74 18                	je     1c00 <std::__cmpexch_failure_order(std::memory_order)+0x20>
+    1be8:	83 f8 03             	cmp    $0x3,%eax
+    1beb:	ba 00 00 00 00       	mov    $0x0,%edx
+    1bf0:	0f 44 c2             	cmove  %edx,%eax
+    1bf3:	66 31 ff             	xor    %di,%di
+    1bf6:	09 f8                	or     %edi,%eax
+    1bf8:	c3                   	retq   
+    1bf9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1c00:	66 31 ff             	xor    %di,%di
+    1c03:	b8 02 00 00 00       	mov    $0x2,%eax
+    1c08:	09 f8                	or     %edi,%eax
+    1c0a:	c3                   	retq   
+    1c0b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001c10 <std::thread::~thread()>:
+    1c10:	48 83 ec 08          	sub    $0x8,%rsp
+    1c14:	48 8b 3f             	mov    (%rdi),%rdi
+    1c17:	31 f6                	xor    %esi,%esi
+    1c19:	e8 12 fe ff ff       	callq  1a30 <std::operator==(std::thread::id, std::thread::id) [clone .constprop.12]>
+    1c1e:	84 c0                	test   %al,%al
+    1c20:	74 05                	je     1c27 <std::thread::~thread()+0x17>
+    1c22:	48 83 c4 08          	add    $0x8,%rsp
+    1c26:	c3                   	retq   
+    1c27:	e8 34 f3 ff ff       	callq  f60 <std::terminate()@plt>
+    1c2c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001c30 <std::remove_reference<std::thread::id&>::type&& std::move<std::thread::id&>(std::thread::id&)>:
+    1c30:	48 89 f8             	mov    %rdi,%rax
+    1c33:	c3                   	retq   
+    1c34:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1c3b:	00 00 00 
+    1c3e:	66 90                	xchg   %ax,%ax
+
+0000000000001c40 <void (&std::forward<void (&)()>(std::remove_reference<void (&)()>::type&))()>:
+    1c40:	48 89 f8             	mov    %rdi,%rax
+    1c43:	c3                   	retq   
+    1c44:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1c4b:	00 00 00 
+    1c4e:	66 90                	xchg   %ax,%ax
+
+0000000000001c50 <std::_Maybe_wrap_member_pointer<void (*)()>::__do_wrap(void (*&&)())>:
+    1c50:	48 89 f8             	mov    %rdi,%rax
+    1c53:	c3                   	retq   
+    1c54:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1c5b:	00 00 00 
+    1c5e:	66 90                	xchg   %ax,%ax
+
+0000000000001c60 <std::_Tuple_impl<0ul, void (*)()>::_M_head(std::_Tuple_impl<0ul, void (*)()>&)>:
+    1c60:	48 89 f8             	mov    %rdi,%rax
+    1c63:	c3                   	retq   
+    1c64:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1c6b:	00 00 00 
+    1c6e:	66 90                	xchg   %ax,%ax
+
+0000000000001c70 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>:
+    1c70:	48 89 f8             	mov    %rdi,%rax
+    1c73:	c3                   	retq   
+    1c74:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1c7b:	00 00 00 
+    1c7e:	66 90                	xchg   %ax,%ax
+
+0000000000001c80 <std::_Bind_simple<void (*())()>&& std::forward<std::_Bind_simple<void (*())()> >(std::remove_reference<std::_Bind_simple<void (*())()> >::type&)>:
+    1c80:	48 89 f8             	mov    %rdi,%rax
+    1c83:	c3                   	retq   
+    1c84:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1c8b:	00 00 00 
+    1c8e:	66 90                	xchg   %ax,%ax
+
+0000000000001c90 <std::tuple_element<0ul, std::tuple<std::thread::_State*, std::default_delete<std::thread::_State> > >::type& std::get<0ul, std::thread::_State*, std::default_delete<std::thread::_State> >(std::tuple<std::thread::_State*, std::default_delete<std::thread::_State> >&)>:
+    1c90:	48 89 f8             	mov    %rdi,%rax
+    1c93:	c3                   	retq   
+    1c94:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1c9b:	00 00 00 
+    1c9e:	66 90                	xchg   %ax,%ax
+
+0000000000001ca0 <std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >::~unique_ptr()>:
+    1ca0:	53                   	push   %rbx
+    1ca1:	e8 ea ff ff ff       	callq  1c90 <std::tuple_element<0ul, std::tuple<std::thread::_State*, std::default_delete<std::thread::_State> > >::type& std::get<0ul, std::thread::_State*, std::default_delete<std::thread::_State> >(std::tuple<std::thread::_State*, std::default_delete<std::thread::_State> >&)>
+    1ca6:	48 8b 38             	mov    (%rax),%rdi
+    1ca9:	48 89 c3             	mov    %rax,%rbx
+    1cac:	48 85 ff             	test   %rdi,%rdi
+    1caf:	74 06                	je     1cb7 <std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >::~unique_ptr()+0x17>
+    1cb1:	48 8b 07             	mov    (%rdi),%rax
+    1cb4:	ff 50 08             	callq  *0x8(%rax)
+    1cb7:	48 c7 03 00 00 00 00 	movq   $0x0,(%rbx)
+    1cbe:	5b                   	pop    %rbx
+    1cbf:	c3                   	retq   
+
+0000000000001cc0 <std::tuple_element<0ul, std::tuple<void (*)()> >::type& std::get<0ul, void (*)()>(std::tuple<void (*)()>&)>:
+    1cc0:	48 89 f8             	mov    %rdi,%rax
+    1cc3:	c3                   	retq   
+    1cc4:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1ccb:	00 00 00 
+    1cce:	66 90                	xchg   %ax,%ax
+
+0000000000001cd0 <std::thread::_State_impl<std::_Bind_simple<void (*())()> >::_M_run()>:
+    1cd0:	48 83 ec 08          	sub    $0x8,%rsp
+    1cd4:	48 83 c7 08          	add    $0x8,%rdi
+    1cd8:	e8 e3 ff ff ff       	callq  1cc0 <std::tuple_element<0ul, std::tuple<void (*)()> >::type& std::get<0ul, void (*)()>(std::tuple<void (*)()>&)>
+    1cdd:	48 89 c7             	mov    %rax,%rdi
+    1ce0:	e8 8b ff ff ff       	callq  1c70 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    1ce5:	48 8b 00             	mov    (%rax),%rax
+    1ce8:	48 83 c4 08          	add    $0x8,%rsp
+    1cec:	ff e0                	jmpq   *%rax
+    1cee:	66 90                	xchg   %ax,%ax
+
+0000000000001cf0 <__libc_csu_init>:
+    1cf0:	41 57                	push   %r15
+    1cf2:	41 56                	push   %r14
+    1cf4:	41 89 ff             	mov    %edi,%r15d
+    1cf7:	41 55                	push   %r13
+    1cf9:	41 54                	push   %r12
+    1cfb:	4c 8d 25 1e 10 20 00 	lea    0x20101e(%rip),%r12        # 202d20 <__frame_dummy_init_array_entry>
+    1d02:	55                   	push   %rbp
+    1d03:	48 8d 2d 26 10 20 00 	lea    0x201026(%rip),%rbp        # 202d30 <__init_array_end>
+    1d0a:	53                   	push   %rbx
+    1d0b:	49 89 f6             	mov    %rsi,%r14
+    1d0e:	49 89 d5             	mov    %rdx,%r13
+    1d11:	4c 29 e5             	sub    %r12,%rbp
+    1d14:	48 83 ec 08          	sub    $0x8,%rsp
+    1d18:	48 c1 fd 03          	sar    $0x3,%rbp
+    1d1c:	e8 ff f1 ff ff       	callq  f20 <_init>
+    1d21:	48 85 ed             	test   %rbp,%rbp
+    1d24:	74 20                	je     1d46 <__libc_csu_init+0x56>
+    1d26:	31 db                	xor    %ebx,%ebx
+    1d28:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    1d2f:	00 
+    1d30:	4c 89 ea             	mov    %r13,%rdx
+    1d33:	4c 89 f6             	mov    %r14,%rsi
+    1d36:	44 89 ff             	mov    %r15d,%edi
+    1d39:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+    1d3d:	48 83 c3 01          	add    $0x1,%rbx
+    1d41:	48 39 dd             	cmp    %rbx,%rbp
+    1d44:	75 ea                	jne    1d30 <__libc_csu_init+0x40>
+    1d46:	48 83 c4 08          	add    $0x8,%rsp
+    1d4a:	5b                   	pop    %rbx
+    1d4b:	5d                   	pop    %rbp
+    1d4c:	41 5c                	pop    %r12
+    1d4e:	41 5d                	pop    %r13
+    1d50:	41 5e                	pop    %r14
+    1d52:	41 5f                	pop    %r15
+    1d54:	c3                   	retq   
+    1d55:	90                   	nop
+    1d56:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1d5d:	00 00 00 
+
+0000000000001d60 <__libc_csu_fini>:
+    1d60:	f3 c3                	repz retq 
+
+Desensamblado de la sección .fini:
+
+0000000000001d64 <_fini>:
+    1d64:	48 83 ec 08          	sub    $0x8,%rsp
+    1d68:	48 83 c4 08          	add    $0x8,%rsp
+    1d6c:	c3                   	retq   

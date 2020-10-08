@@ -1,0 +1,21 @@
+-----------------------------------------------------------------------------
+nºlec    = número de total de lecturas (siempre correctas)
+nºesc    = número de total de escrituras
+total    = lecturas + escrituas correctas
+cc       = condiciones de carrera = escrituras - escrituras correctas
+real     = tiempo real transcurrido
+user     = tiempo de usuario
+sys      = tiempo de sistema
+u+s      = user + sys
+ratio    = total / (u + s)
+-----------------------------------------------------------------------------
+      programa  nºlec  nºesc  total     cc   real   user    sys    u+s  ratio
+-----------------------------------------------------------------------------
+     le-interr 171229 126053 297282      0   1.00   0.35   1.17   1,52 195580
+    le-interr2 293607    547 294154      0   1.00   0.32   1.24   1,56 188560
+      le-mutex 135466 143438 278904      0   1.00   0.38   1.18   1,56 178785
+        le-sem 279493    128 279621      0   1.00   0.41   1.23   1,64 170501
+       le-sem2 213277    128 213405      0   1.00   0.55   1.47   2,02 105646
+      shared-y 194150    128 194278      0   1.02   0.88   3.08   3,96  49060
+-----------------------------------------------------------------------------
+

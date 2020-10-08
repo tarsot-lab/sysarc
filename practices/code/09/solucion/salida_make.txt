@@ -1,0 +1,61 @@
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    atomic-s.cc   -o atomic-s
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    atomic.cc   -o atomic
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    atomic_flag-s.cc   -o atomic_flag-s
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    atomic_flag.cc   -o atomic_flag
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    cerrojo-s.cc   -o cerrojo-s
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    cerrojo.cc   -o cerrojo
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    lamport-s.cc   -o lamport-s
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    lamport.cc   -o lamport
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    lock_guard.cc   -o lock_guard
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    mensaje.cc   -o mensaje
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    mutex-s.cc   -o mutex-s
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    mutex.cc   -o mutex
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    secuencial.cc   -o secuencial
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    spinlock-s.cc   -o spinlock-s
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    spinlock-y.cc   -o spinlock-y
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    spinlock.cc   -o spinlock
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    tas-s.cc   -o tas-s
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    tas.cc   -o tas
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    tasb-s.cc   -o tasb-s
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    tasb.cc   -o tasb
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    ticketlock.cc   -o ticketlock
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    ttas-s.cc   -o ttas-s
+g++ -march=native -O3 -pthread -Wall -Wl,--no-as-needed  --std=c++14    ttas.cc   -o ttas
+-----------------------------------------------------------------------------
+bien  : número de mensajes correctos
+mal   : número de mensajes incorrectos
+total : bien + mal
+hebras: número de hebras que han impreso al menos un mensaje
+real  : tiempo de pared en segundos
+user  : tiempo de usuario en segundos
+sys   : tiempo de sistema en segundos
+tiempo: user + sys
+ratio : bien / tiempo --> número de mensajes correctos por segundo
+-----------------------------------------------------------------------------
+      programa   bien    mal  total hebras   real   user    sys tiempo  ratio
+-----------------------------------------------------------------------------
+      atomic-s  49724      0  49724      1   1.00   0.46   0.54   1.00  49724
+        atomic   4774      0   4774     10   1.00   1.89   0.07   1.96   2435
+ atomic_flag-s  47966      0  47966      1   1.00   0.44   0.54    .98  48944
+   atomic_flag   4612      0   4612     13   1.00   1.83   0.07   1.90   2427
+     cerrojo-s  49947      0  49947      1   1.00   0.42   0.57    .99  50451
+       cerrojo  50154      0  50154      1   1.00   0.52   0.48   1.00  50154
+     lamport-s    377      0    377     16   1.00   0.03   0.08    .11   3427
+       lamport     60      0     60     16   1.00   1.97   0.00   1.97     30
+    lock_guard  25929      0  25929     16   1.00   0.42   0.99   1.41  18389
+       mensaje   2903  24955  27858     16   1.00   0.48   1.43   1.91   1519
+       mutex-s  47973      0  47973      1   1.00   0.46   0.53    .99  48457
+         mutex  26470      0  26470     15   1.00   0.44   0.98   1.42  18640
+    secuencial  46443      0  46443      1   1.00   0.41   0.57    .98  47390
+    spinlock-s  49726      0  49726      1   1.00   0.47   0.53   1.00  49726
+    spinlock-y   4981      0   4981      8   1.00   0.28   1.68   1.96   2541
+      spinlock   4673      0   4673     14   1.00   1.81   0.07   1.88   2485
+         tas-s  48714      0  48714      1   1.00   0.44   0.56   1.00  48714
+           tas   4900      0   4900     10   1.00   1.90   0.06   1.96   2500
+        tasb-s  50012      0  50012      1   1.00   0.46   0.53    .99  50517
+          tasb   4817      0   4817     11   1.00   1.88   0.08   1.96   2457
+    ticketlock  12188      0  12188     16   1.00   0.32   1.07   1.39   8768
+        ttas-s  50157      0  50157      1   1.00   0.41   0.58    .99  50663
+          ttas   4461      0   4461      3   1.00   1.85   0.05   1.90   2347
+-----------------------------------------------------------------------------
+

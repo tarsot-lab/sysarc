@@ -1,0 +1,12 @@
+wget -m https://pccito.ugr.es/as/practicas/01/
+wget -m https://pccito.ugr.es/as/practicas/02/
+wget -m https://pccito.ugr.es/as/practicas/03/
+wget -m https://pccito.ugr.es/as/practicas/04/
+wget -m https://pccito.ugr.es/as/practicas/05/
+wget -m https://pccito.ugr.es/as/practicas/06/
+wget -m https://pccito.ugr.es/as/practicas/07/
+wget -m https://pccito.ugr.es/as/practicas/08/
+wget -m https://pccito.ugr.es/as/practicas/09/
+wget -m https://pccito.ugr.es/as/practicas/10/
+wget -m https://pccito.ugr.es/as/practicas/11/
+wget -m https://pccito.ugr.es/as/practicas/12/

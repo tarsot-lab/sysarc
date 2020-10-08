@@ -1,0 +1,646 @@
+
+sec:     formato del fichero elf64-x86-64
+
+
+Desensamblado de la sección .init:
+
+0000000000000ff8 <_init>:
+     ff8:	48 83 ec 08          	sub    $0x8,%rsp
+     ffc:	48 8b 05 ed 0f 20 00 	mov    0x200fed(%rip),%rax        # 201ff0 <__gmon_start__>
+    1003:	48 85 c0             	test   %rax,%rax
+    1006:	74 02                	je     100a <_init+0x12>
+    1008:	ff d0                	callq  *%rax
+    100a:	48 83 c4 08          	add    $0x8,%rsp
+    100e:	c3                   	retq   
+
+Desensamblado de la sección .plt:
+
+0000000000001010 <.plt>:
+    1010:	ff 35 f2 0f 20 00    	pushq  0x200ff2(%rip)        # 202008 <_GLOBAL_OFFSET_TABLE_+0x8>
+    1016:	ff 25 f4 0f 20 00    	jmpq   *0x200ff4(%rip)        # 202010 <_GLOBAL_OFFSET_TABLE_+0x10>
+    101c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001020 <__errno_location@plt>:
+    1020:	ff 25 f2 0f 20 00    	jmpq   *0x200ff2(%rip)        # 202018 <__errno_location@GLIBC_2.2.5>
+    1026:	68 00 00 00 00       	pushq  $0x0
+    102b:	e9 e0 ff ff ff       	jmpq   1010 <.plt>
+
+0000000000001030 <std::terminate()@plt>:
+    1030:	ff 25 ea 0f 20 00    	jmpq   *0x200fea(%rip)        # 202020 <std::terminate()@GLIBCXX_3.4>
+    1036:	68 01 00 00 00       	pushq  $0x1
+    103b:	e9 d0 ff ff ff       	jmpq   1010 <.plt>
+
+0000000000001040 <nanosleep@plt>:
+    1040:	ff 25 e2 0f 20 00    	jmpq   *0x200fe2(%rip)        # 202028 <nanosleep@GLIBC_2.2.5>
+    1046:	68 02 00 00 00       	pushq  $0x2
+    104b:	e9 c0 ff ff ff       	jmpq   1010 <.plt>
+
+0000000000001050 <std::thread::_State::~_State()@plt>:
+    1050:	ff 25 da 0f 20 00    	jmpq   *0x200fda(%rip)        # 202030 <std::thread::_State::~_State()@GLIBCXX_3.4.22>
+    1056:	68 03 00 00 00       	pushq  $0x3
+    105b:	e9 b0 ff ff ff       	jmpq   1010 <.plt>
+
+0000000000001060 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@plt>:
+    1060:	ff 25 d2 0f 20 00    	jmpq   *0x200fd2(%rip)        # 202038 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@GLIBCXX_3.4>
+    1066:	68 04 00 00 00       	pushq  $0x4
+    106b:	e9 a0 ff ff ff       	jmpq   1010 <.plt>
+
+0000000000001070 <std::__throw_system_error(int)@plt>:
+    1070:	ff 25 ca 0f 20 00    	jmpq   *0x200fca(%rip)        # 202040 <std::__throw_system_error(int)@GLIBCXX_3.4.11>
+    1076:	68 05 00 00 00       	pushq  $0x5
+    107b:	e9 90 ff ff ff       	jmpq   1010 <.plt>
+
+0000000000001080 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@plt>:
+    1080:	ff 25 c2 0f 20 00    	jmpq   *0x200fc2(%rip)        # 202048 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@GLIBCXX_3.4.9>
+    1086:	68 06 00 00 00       	pushq  $0x6
+    108b:	e9 80 ff ff ff       	jmpq   1010 <.plt>
+
+0000000000001090 <pthread_mutex_unlock@plt>:
+    1090:	ff 25 ba 0f 20 00    	jmpq   *0x200fba(%rip)        # 202050 <pthread_mutex_unlock@GLIBC_2.2.5>
+    1096:	68 07 00 00 00       	pushq  $0x7
+    109b:	e9 70 ff ff ff       	jmpq   1010 <.plt>
+
+00000000000010a0 <__cxa_atexit@plt>:
+    10a0:	ff 25 b2 0f 20 00    	jmpq   *0x200fb2(%rip)        # 202058 <__cxa_atexit@GLIBC_2.2.5>
+    10a6:	68 08 00 00 00       	pushq  $0x8
+    10ab:	e9 60 ff ff ff       	jmpq   1010 <.plt>
+
+00000000000010b0 <std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)())@plt>:
+    10b0:	ff 25 aa 0f 20 00    	jmpq   *0x200faa(%rip)        # 202060 <std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)())@GLIBCXX_3.4.22>
+    10b6:	68 09 00 00 00       	pushq  $0x9
+    10bb:	e9 50 ff ff ff       	jmpq   1010 <.plt>
+
+00000000000010c0 <operator delete(void*)@plt>:
+    10c0:	ff 25 a2 0f 20 00    	jmpq   *0x200fa2(%rip)        # 202068 <operator delete(void*)@GLIBCXX_3.4>
+    10c6:	68 0a 00 00 00       	pushq  $0xa
+    10cb:	e9 40 ff ff ff       	jmpq   1010 <.plt>
+
+00000000000010d0 <operator new(unsigned long)@plt>:
+    10d0:	ff 25 9a 0f 20 00    	jmpq   *0x200f9a(%rip)        # 202070 <operator new(unsigned long)@GLIBCXX_3.4>
+    10d6:	68 0b 00 00 00       	pushq  $0xb
+    10db:	e9 30 ff ff ff       	jmpq   1010 <.plt>
+
+00000000000010e0 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>:
+    10e0:	ff 25 92 0f 20 00    	jmpq   *0x200f92(%rip)        # 202078 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@GLIBCXX_3.4.9>
+    10e6:	68 0c 00 00 00       	pushq  $0xc
+    10eb:	e9 20 ff ff ff       	jmpq   1010 <.plt>
+
+00000000000010f0 <pthread_mutex_lock@plt>:
+    10f0:	ff 25 8a 0f 20 00    	jmpq   *0x200f8a(%rip)        # 202080 <pthread_mutex_lock@GLIBC_2.2.5>
+    10f6:	68 0d 00 00 00       	pushq  $0xd
+    10fb:	e9 10 ff ff ff       	jmpq   1010 <.plt>
+
+0000000000001100 <std::ios_base::Init::Init()@plt>:
+    1100:	ff 25 82 0f 20 00    	jmpq   *0x200f82(%rip)        # 202088 <std::ios_base::Init::Init()@GLIBCXX_3.4>
+    1106:	68 0e 00 00 00       	pushq  $0xe
+    110b:	e9 00 ff ff ff       	jmpq   1010 <.plt>
+
+0000000000001110 <std::thread::join()@plt>:
+    1110:	ff 25 7a 0f 20 00    	jmpq   *0x200f7a(%rip)        # 202090 <std::thread::join()@GLIBCXX_3.4.11>
+    1116:	68 0f 00 00 00       	pushq  $0xf
+    111b:	e9 f0 fe ff ff       	jmpq   1010 <.plt>
+
+0000000000001120 <_Unwind_Resume@plt>:
+    1120:	ff 25 72 0f 20 00    	jmpq   *0x200f72(%rip)        # 202098 <_Unwind_Resume@GCC_3.0>
+    1126:	68 10 00 00 00       	pushq  $0x10
+    112b:	e9 e0 fe ff ff       	jmpq   1010 <.plt>
+
+Desensamblado de la sección .plt.got:
+
+0000000000001130 <.plt.got>:
+    1130:	ff 25 82 0e 20 00    	jmpq   *0x200e82(%rip)        # 201fb8 <__cxa_finalize@GLIBC_2.2.5>
+    1136:	66 90                	xchg   %ax,%ax
+
+Desensamblado de la sección .text:
+
+0000000000001140 <main>:
+    1140:	55                   	push   %rbp
+    1141:	48 8d 35 58 02 00 00 	lea    0x258(%rip),%rsi        # 13a0 <work()>
+    1148:	53                   	push   %rbx
+    1149:	48 83 ec 28          	sub    $0x28,%rsp
+    114d:	48 8d 6c 24 08       	lea    0x8(%rsp),%rbp
+    1152:	48 8d 5c 24 10       	lea    0x10(%rsp),%rbx
+    1157:	48 89 ef             	mov    %rbp,%rdi
+    115a:	e8 a1 04 00 00       	callq  1600 <std::thread::thread<void (&)()>(void (&)())>
+    115f:	c5 f9 6f 05 19 07 00 	vmovdqa 0x719(%rip),%xmm0        # 1880 <typeinfo name for std::thread::_State_impl<std::_Bind_simple<void (*())()> >+0x40>
+    1166:	00 
+    1167:	c5 f8 29 44 24 10    	vmovaps %xmm0,0x10(%rsp)
+    116d:	48 89 de             	mov    %rbx,%rsi
+    1170:	48 89 df             	mov    %rbx,%rdi
+    1173:	e8 c8 fe ff ff       	callq  1040 <nanosleep@plt>
+    1178:	83 f8 ff             	cmp    $0xffffffff,%eax
+    117b:	74 73                	je     11f0 <main+0xb0>
+    117d:	c6 05 2c 0f 20 00 00 	movb   $0x0,0x200f2c(%rip)        # 2020b0 <run>
+    1184:	48 89 ef             	mov    %rbp,%rdi
+    1187:	0f ae f0             	mfence 
+    118a:	e8 81 ff ff ff       	callq  1110 <std::thread::join()@plt>
+    118f:	8b 35 e3 10 20 00    	mov    0x2010e3(%rip),%esi        # 202278 <push>
+    1195:	48 8d 3d c4 0f 20 00 	lea    0x200fc4(%rip),%rdi        # 202160 <std::cout@@GLIBCXX_3.4>
+    119c:	8b 1d d2 10 20 00    	mov    0x2010d2(%rip),%ebx        # 202274 <pop>
+    11a2:	e8 d9 fe ff ff       	callq  1080 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@plt>
+    11a7:	48 8d 74 24 07       	lea    0x7(%rsp),%rsi
+    11ac:	ba 01 00 00 00       	mov    $0x1,%edx
+    11b1:	48 89 c7             	mov    %rax,%rdi
+    11b4:	c6 44 24 07 20       	movb   $0x20,0x7(%rsp)
+    11b9:	e8 22 ff ff ff       	callq  10e0 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    11be:	89 de                	mov    %ebx,%esi
+    11c0:	48 89 c7             	mov    %rax,%rdi
+    11c3:	e8 b8 fe ff ff       	callq  1080 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@plt>
+    11c8:	48 89 c7             	mov    %rax,%rdi
+    11cb:	e8 90 fe ff ff       	callq  1060 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@plt>
+    11d0:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+    11d5:	31 f6                	xor    %esi,%esi
+    11d7:	e8 74 03 00 00       	callq  1550 <std::operator==(std::thread::id, std::thread::id)>
+    11dc:	84 c0                	test   %al,%al
+    11de:	74 3d                	je     121d <main+0xdd>
+    11e0:	48 83 c4 28          	add    $0x28,%rsp
+    11e4:	31 c0                	xor    %eax,%eax
+    11e6:	5b                   	pop    %rbx
+    11e7:	5d                   	pop    %rbp
+    11e8:	c3                   	retq   
+    11e9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    11f0:	e8 2b fe ff ff       	callq  1020 <__errno_location@plt>
+    11f5:	83 38 04             	cmpl   $0x4,(%rax)
+    11f8:	75 83                	jne    117d <main+0x3d>
+    11fa:	e9 6e ff ff ff       	jmpq   116d <main+0x2d>
+    11ff:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+    1204:	48 89 c3             	mov    %rax,%rbx
+    1207:	31 f6                	xor    %esi,%esi
+    1209:	c5 f8 77             	vzeroupper 
+    120c:	e8 3f 03 00 00       	callq  1550 <std::operator==(std::thread::id, std::thread::id)>
+    1211:	84 c0                	test   %al,%al
+    1213:	74 08                	je     121d <main+0xdd>
+    1215:	48 89 df             	mov    %rbx,%rdi
+    1218:	e8 03 ff ff ff       	callq  1120 <_Unwind_Resume@plt>
+    121d:	e8 0e fe ff ff       	callq  1030 <std::terminate()@plt>
+    1222:	0f 1f 40 00          	nopl   0x0(%rax)
+    1226:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    122d:	00 00 00 
+
+0000000000001230 <_GLOBAL__sub_I_run>:
+    1230:	48 83 ec 08          	sub    $0x8,%rsp
+    1234:	48 8d 3d 41 10 20 00 	lea    0x201041(%rip),%rdi        # 20227c <std::__ioinit>
+    123b:	e8 c0 fe ff ff       	callq  1100 <std::ios_base::Init::Init()@plt>
+    1240:	48 8b 3d b1 0d 20 00 	mov    0x200db1(%rip),%rdi        # 201ff8 <std::ios_base::Init::~Init()@GLIBCXX_3.4>
+    1247:	48 83 c4 08          	add    $0x8,%rsp
+    124b:	48 8d 15 56 0e 20 00 	lea    0x200e56(%rip),%rdx        # 2020a8 <__dso_handle>
+    1252:	48 8d 35 23 10 20 00 	lea    0x201023(%rip),%rsi        # 20227c <std::__ioinit>
+    1259:	e9 42 fe ff ff       	jmpq   10a0 <__cxa_atexit@plt>
+    125e:	66 90                	xchg   %ax,%ax
+
+0000000000001260 <_start>:
+    1260:	31 ed                	xor    %ebp,%ebp
+    1262:	49 89 d1             	mov    %rdx,%r9
+    1265:	5e                   	pop    %rsi
+    1266:	48 89 e2             	mov    %rsp,%rdx
+    1269:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    126d:	50                   	push   %rax
+    126e:	54                   	push   %rsp
+    126f:	4c 8d 05 8a 05 00 00 	lea    0x58a(%rip),%r8        # 1800 <__libc_csu_fini>
+    1276:	48 8d 0d 13 05 00 00 	lea    0x513(%rip),%rcx        # 1790 <__libc_csu_init>
+    127d:	48 8d 3d bc fe ff ff 	lea    -0x144(%rip),%rdi        # 1140 <main>
+    1284:	ff 15 5e 0d 20 00    	callq  *0x200d5e(%rip)        # 201fe8 <__libc_start_main@GLIBC_2.2.5>
+    128a:	f4                   	hlt    
+    128b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001290 <deregister_tm_clones>:
+    1290:	48 8d 3d 29 0e 20 00 	lea    0x200e29(%rip),%rdi        # 2020c0 <__TMC_LIST__>
+    1297:	48 8d 05 c9 0e 20 00 	lea    0x200ec9(%rip),%rax        # 202167 <__TMC_END__+0x7>
+    129e:	55                   	push   %rbp
+    129f:	48 29 f8             	sub    %rdi,%rax
+    12a2:	48 89 e5             	mov    %rsp,%rbp
+    12a5:	48 83 f8 0e          	cmp    $0xe,%rax
+    12a9:	76 15                	jbe    12c0 <deregister_tm_clones+0x30>
+    12ab:	48 8b 05 0e 0d 20 00 	mov    0x200d0e(%rip),%rax        # 201fc0 <_ITM_deregisterTMCloneTable@LIBITM_1.0>
+    12b2:	48 85 c0             	test   %rax,%rax
+    12b5:	74 09                	je     12c0 <deregister_tm_clones+0x30>
+    12b7:	5d                   	pop    %rbp
+    12b8:	ff e0                	jmpq   *%rax
+    12ba:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    12c0:	5d                   	pop    %rbp
+    12c1:	c3                   	retq   
+    12c2:	0f 1f 40 00          	nopl   0x0(%rax)
+    12c6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    12cd:	00 00 00 
+
+00000000000012d0 <register_tm_clones>:
+    12d0:	48 8d 3d e9 0d 20 00 	lea    0x200de9(%rip),%rdi        # 2020c0 <__TMC_LIST__>
+    12d7:	48 8d 35 82 0e 20 00 	lea    0x200e82(%rip),%rsi        # 202160 <std::cout@@GLIBCXX_3.4>
+    12de:	55                   	push   %rbp
+    12df:	48 29 fe             	sub    %rdi,%rsi
+    12e2:	48 89 e5             	mov    %rsp,%rbp
+    12e5:	48 c1 fe 03          	sar    $0x3,%rsi
+    12e9:	48 89 f0             	mov    %rsi,%rax
+    12ec:	48 c1 e8 3f          	shr    $0x3f,%rax
+    12f0:	48 01 c6             	add    %rax,%rsi
+    12f3:	48 d1 fe             	sar    %rsi
+    12f6:	74 18                	je     1310 <register_tm_clones+0x40>
+    12f8:	48 8b 05 d1 0c 20 00 	mov    0x200cd1(%rip),%rax        # 201fd0 <_ITM_registerTMCloneTable@LIBITM_1.0>
+    12ff:	48 85 c0             	test   %rax,%rax
+    1302:	74 0c                	je     1310 <register_tm_clones+0x40>
+    1304:	5d                   	pop    %rbp
+    1305:	ff e0                	jmpq   *%rax
+    1307:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    130e:	00 00 
+    1310:	5d                   	pop    %rbp
+    1311:	c3                   	retq   
+    1312:	0f 1f 40 00          	nopl   0x0(%rax)
+    1316:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    131d:	00 00 00 
+
+0000000000001320 <__do_global_dtors_aux>:
+    1320:	80 3d 49 0f 20 00 00 	cmpb   $0x0,0x200f49(%rip)        # 202270 <completed.6972>
+    1327:	75 27                	jne    1350 <__do_global_dtors_aux+0x30>
+    1329:	48 83 3d 87 0c 20 00 	cmpq   $0x0,0x200c87(%rip)        # 201fb8 <__cxa_finalize@GLIBC_2.2.5>
+    1330:	00 
+    1331:	55                   	push   %rbp
+    1332:	48 89 e5             	mov    %rsp,%rbp
+    1335:	74 0c                	je     1343 <__do_global_dtors_aux+0x23>
+    1337:	48 8b 3d 6a 0d 20 00 	mov    0x200d6a(%rip),%rdi        # 2020a8 <__dso_handle>
+    133e:	e8 ed fd ff ff       	callq  1130 <.plt.got>
+    1343:	e8 48 ff ff ff       	callq  1290 <deregister_tm_clones>
+    1348:	5d                   	pop    %rbp
+    1349:	c6 05 20 0f 20 00 01 	movb   $0x1,0x200f20(%rip)        # 202270 <completed.6972>
+    1350:	f3 c3                	repz retq 
+    1352:	0f 1f 40 00          	nopl   0x0(%rax)
+    1356:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    135d:	00 00 00 
+
+0000000000001360 <frame_dummy>:
+    1360:	48 8d 3d c9 09 20 00 	lea    0x2009c9(%rip),%rdi        # 201d30 <__JCR_END__>
+    1367:	48 83 3f 00          	cmpq   $0x0,(%rdi)
+    136b:	75 0b                	jne    1378 <frame_dummy+0x18>
+    136d:	e9 5e ff ff ff       	jmpq   12d0 <register_tm_clones>
+    1372:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    1378:	48 8b 05 59 0c 20 00 	mov    0x200c59(%rip),%rax        # 201fd8 <_Jv_RegisterClasses>
+    137f:	48 85 c0             	test   %rax,%rax
+    1382:	74 e9                	je     136d <frame_dummy+0xd>
+    1384:	55                   	push   %rbp
+    1385:	48 89 e5             	mov    %rsp,%rbp
+    1388:	ff d0                	callq  *%rax
+    138a:	5d                   	pop    %rbp
+    138b:	e9 40 ff ff ff       	jmpq   12d0 <register_tm_clones>
+
+0000000000001390 <__gthread_active_p()>:
+    1390:	31 c0                	xor    %eax,%eax
+    1392:	48 83 3d 46 0c 20 00 	cmpq   $0x0,0x200c46(%rip)        # 201fe0 <__pthread_key_create@GLIBC_2.2.5>
+    1399:	00 
+    139a:	0f 95 c0             	setne  %al
+    139d:	c3                   	retq   
+    139e:	66 90                	xchg   %ax,%ax
+
+00000000000013a0 <work()>:
+    13a0:	41 54                	push   %r12
+    13a2:	31 ff                	xor    %edi,%edi
+    13a4:	55                   	push   %rbp
+    13a5:	53                   	push   %rbx
+    13a6:	48 83 ec 30          	sub    $0x30,%rsp
+    13aa:	e8 71 03 00 00       	callq  1720 <unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 1ul, 0ul>(unsigned long)>
+    13af:	bf 01 00 00 00       	mov    $0x1,%edi
+    13b4:	48 85 c0             	test   %rax,%rax
+    13b7:	0f 85 43 01 00 00    	jne    1500 <work()+0x160>
+    13bd:	e8 5e 03 00 00       	callq  1720 <unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 1ul, 0ul>(unsigned long)>
+    13c2:	48 89 c3             	mov    %rax,%rbx
+    13c5:	48 85 c0             	test   %rax,%rax
+    13c8:	b8 01 00 00 00       	mov    $0x1,%eax
+    13cd:	48 0f 44 d8          	cmove  %rax,%rbx
+    13d1:	48 c7 04 24 00 00 00 	movq   $0x0,(%rsp)
+    13d8:	00 
+    13d9:	49 89 e4             	mov    %rsp,%r12
+    13dc:	48 c7 44 24 08 00 00 	movq   $0x0,0x8(%rsp)
+    13e3:	00 00 
+    13e5:	48 c7 44 24 10 00 00 	movq   $0x0,0x10(%rsp)
+    13ec:	00 00 
+    13ee:	48 c7 44 24 18 00 00 	movq   $0x0,0x18(%rsp)
+    13f5:	00 00 
+    13f7:	48 c7 44 24 20 00 00 	movq   $0x0,0x20(%rsp)
+    13fe:	00 00 
+    1400:	48 c7 44 24 28 00 00 	movq   $0x0,0x28(%rsp)
+    1407:	00 00 
+    1409:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1410:	0f b6 05 99 0c 20 00 	movzbl 0x200c99(%rip),%eax        # 2020b0 <run>
+    1417:	84 c0                	test   %al,%al
+    1419:	74 49                	je     1464 <work()+0xc4>
+    141b:	48 89 df             	mov    %rbx,%rdi
+    141e:	e8 4d 01 00 00       	callq  1570 <unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 16807ul, 0ul>(unsigned long)>
+    1423:	48 89 c3             	mov    %rax,%rbx
+    1426:	a8 01                	test   $0x1,%al
+    1428:	74 46                	je     1470 <work()+0xd0>
+    142a:	bf 10 00 00 00       	mov    $0x10,%edi
+    142f:	e8 9c fc ff ff       	callq  10d0 <operator new(unsigned long)@plt>
+    1434:	48 89 c5             	mov    %rax,%rbp
+    1437:	e8 54 ff ff ff       	callq  1390 <__gthread_active_p()>
+    143c:	85 c0                	test   %eax,%eax
+    143e:	0f 85 8c 00 00 00    	jne    14d0 <work()+0x130>
+    1444:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+    1449:	48 89 6c 24 28       	mov    %rbp,0x28(%rsp)
+    144e:	48 89 45 00          	mov    %rax,0x0(%rbp)
+    1452:	83 05 1f 0e 20 00 01 	addl   $0x1,0x200e1f(%rip)        # 202278 <push>
+    1459:	0f b6 05 50 0c 20 00 	movzbl 0x200c50(%rip),%eax        # 2020b0 <run>
+    1460:	84 c0                	test   %al,%al
+    1462:	75 b7                	jne    141b <work()+0x7b>
+    1464:	48 83 c4 30          	add    $0x30,%rsp
+    1468:	5b                   	pop    %rbx
+    1469:	5d                   	pop    %rbp
+    146a:	41 5c                	pop    %r12
+    146c:	c3                   	retq   
+    146d:	0f 1f 00             	nopl   (%rax)
+    1470:	e8 1b ff ff ff       	callq  1390 <__gthread_active_p()>
+    1475:	85 c0                	test   %eax,%eax
+    1477:	75 27                	jne    14a0 <work()+0x100>
+    1479:	48 8b 6c 24 28       	mov    0x28(%rsp),%rbp
+    147e:	48 85 ed             	test   %rbp,%rbp
+    1481:	74 09                	je     148c <work()+0xec>
+    1483:	48 8b 45 00          	mov    0x0(%rbp),%rax
+    1487:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+    148c:	48 89 ef             	mov    %rbp,%rdi
+    148f:	e8 2c fc ff ff       	callq  10c0 <operator delete(void*)@plt>
+    1494:	83 05 d9 0d 20 00 01 	addl   $0x1,0x200dd9(%rip)        # 202274 <pop>
+    149b:	e9 70 ff ff ff       	jmpq   1410 <work()+0x70>
+    14a0:	4c 89 e7             	mov    %r12,%rdi
+    14a3:	e8 48 fc ff ff       	callq  10f0 <pthread_mutex_lock@plt>
+    14a8:	85 c0                	test   %eax,%eax
+    14aa:	75 61                	jne    150d <work()+0x16d>
+    14ac:	48 8b 6c 24 28       	mov    0x28(%rsp),%rbp
+    14b1:	48 85 ed             	test   %rbp,%rbp
+    14b4:	74 09                	je     14bf <work()+0x11f>
+    14b6:	48 8b 45 00          	mov    0x0(%rbp),%rax
+    14ba:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+    14bf:	4c 89 e7             	mov    %r12,%rdi
+    14c2:	e8 c9 fb ff ff       	callq  1090 <pthread_mutex_unlock@plt>
+    14c7:	eb c3                	jmp    148c <work()+0xec>
+    14c9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    14d0:	4c 89 e7             	mov    %r12,%rdi
+    14d3:	e8 18 fc ff ff       	callq  10f0 <pthread_mutex_lock@plt>
+    14d8:	85 c0                	test   %eax,%eax
+    14da:	75 31                	jne    150d <work()+0x16d>
+    14dc:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+    14e1:	4c 89 e7             	mov    %r12,%rdi
+    14e4:	48 89 6c 24 28       	mov    %rbp,0x28(%rsp)
+    14e9:	48 89 45 00          	mov    %rax,0x0(%rbp)
+    14ed:	e8 9e fb ff ff       	callq  1090 <pthread_mutex_unlock@plt>
+    14f2:	e9 5b ff ff ff       	jmpq   1452 <work()+0xb2>
+    14f7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    14fe:	00 00 
+    1500:	e8 1b 02 00 00       	callq  1720 <unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 1ul, 0ul>(unsigned long)>
+    1505:	48 89 c3             	mov    %rax,%rbx
+    1508:	e9 c4 fe ff ff       	jmpq   13d1 <work()+0x31>
+    150d:	89 c7                	mov    %eax,%edi
+    150f:	e8 5c fb ff ff       	callq  1070 <std::__throw_system_error(int)@plt>
+    1514:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    151b:	00 00 00 
+    151e:	66 90                	xchg   %ax,%ax
+
+0000000000001520 <std::thread::_State_impl<std::_Bind_simple<void (*())()> >::~_State_impl()>:
+    1520:	48 8d 05 21 08 20 00 	lea    0x200821(%rip),%rax        # 201d48 <vtable for std::thread::_State_impl<std::_Bind_simple<void (*())()> >+0x10>
+    1527:	48 89 07             	mov    %rax,(%rdi)
+    152a:	e9 21 fb ff ff       	jmpq   1050 <std::thread::_State::~_State()@plt>
+    152f:	90                   	nop
+
+0000000000001530 <std::thread::_State_impl<std::_Bind_simple<void (*())()> >::~_State_impl()>:
+    1530:	48 8d 05 11 08 20 00 	lea    0x200811(%rip),%rax        # 201d48 <vtable for std::thread::_State_impl<std::_Bind_simple<void (*())()> >+0x10>
+    1537:	53                   	push   %rbx
+    1538:	48 89 fb             	mov    %rdi,%rbx
+    153b:	48 89 07             	mov    %rax,(%rdi)
+    153e:	e8 0d fb ff ff       	callq  1050 <std::thread::_State::~_State()@plt>
+    1543:	48 89 df             	mov    %rbx,%rdi
+    1546:	5b                   	pop    %rbx
+    1547:	e9 74 fb ff ff       	jmpq   10c0 <operator delete(void*)@plt>
+    154c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001550 <std::operator==(std::thread::id, std::thread::id)>:
+    1550:	48 39 f7             	cmp    %rsi,%rdi
+    1553:	0f 94 c0             	sete   %al
+    1556:	c3                   	retq   
+    1557:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    155e:	00 00 
+
+0000000000001560 <void (&std::forward<void (&)()>(std::remove_reference<void (&)()>::type&))()>:
+    1560:	48 89 f8             	mov    %rdi,%rax
+    1563:	c3                   	retq   
+    1564:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    156b:	00 00 00 
+    156e:	66 90                	xchg   %ax,%ax
+
+0000000000001570 <unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 16807ul, 0ul>(unsigned long)>:
+    1570:	48 69 ff a7 41 00 00 	imul   $0x41a7,%rdi,%rdi
+    1577:	48 ba 05 00 00 00 02 	movabs $0x200000005,%rdx
+    157e:	00 00 00 
+    1581:	48 89 f8             	mov    %rdi,%rax
+    1584:	48 f7 e2             	mul    %rdx
+    1587:	48 89 f8             	mov    %rdi,%rax
+    158a:	48 29 d0             	sub    %rdx,%rax
+    158d:	48 d1 e8             	shr    %rax
+    1590:	48 01 d0             	add    %rdx,%rax
+    1593:	48 c1 e8 1e          	shr    $0x1e,%rax
+    1597:	48 89 c2             	mov    %rax,%rdx
+    159a:	48 c1 e2 1f          	shl    $0x1f,%rdx
+    159e:	48 29 c2             	sub    %rax,%rdx
+    15a1:	48 29 d7             	sub    %rdx,%rdi
+    15a4:	48 89 f8             	mov    %rdi,%rax
+    15a7:	c3                   	retq   
+    15a8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    15af:	00 
+
+00000000000015b0 <std::_Maybe_wrap_member_pointer<void (*)()>::__do_wrap(void (*&&)())>:
+    15b0:	48 89 f8             	mov    %rdi,%rax
+    15b3:	c3                   	retq   
+    15b4:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    15bb:	00 00 00 
+    15be:	66 90                	xchg   %ax,%ax
+
+00000000000015c0 <std::_Tuple_impl<0ul, void (*)()>::_M_head(std::_Tuple_impl<0ul, void (*)()>&)>:
+    15c0:	48 89 f8             	mov    %rdi,%rax
+    15c3:	c3                   	retq   
+    15c4:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    15cb:	00 00 00 
+    15ce:	66 90                	xchg   %ax,%ax
+
+00000000000015d0 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>:
+    15d0:	48 89 f8             	mov    %rdi,%rax
+    15d3:	c3                   	retq   
+    15d4:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    15db:	00 00 00 
+    15de:	66 90                	xchg   %ax,%ax
+
+00000000000015e0 <std::_Bind_simple<void (*())()>&& std::forward<std::_Bind_simple<void (*())()> >(std::remove_reference<std::_Bind_simple<void (*())()> >::type&)>:
+    15e0:	48 89 f8             	mov    %rdi,%rax
+    15e3:	c3                   	retq   
+    15e4:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    15eb:	00 00 00 
+    15ee:	66 90                	xchg   %ax,%ax
+
+00000000000015f0 <std::tuple_element<0ul, std::tuple<std::thread::_State*, std::default_delete<std::thread::_State> > >::type& std::get<0ul, std::thread::_State*, std::default_delete<std::thread::_State> >(std::tuple<std::thread::_State*, std::default_delete<std::thread::_State> >&)>:
+    15f0:	48 89 f8             	mov    %rdi,%rax
+    15f3:	c3                   	retq   
+    15f4:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    15fb:	00 00 00 
+    15fe:	66 90                	xchg   %ax,%ax
+
+0000000000001600 <std::thread::thread<void (&)()>(void (&)())>:
+    1600:	41 55                	push   %r13
+    1602:	49 89 fd             	mov    %rdi,%r13
+    1605:	41 54                	push   %r12
+    1607:	55                   	push   %rbp
+    1608:	53                   	push   %rbx
+    1609:	48 83 ec 18          	sub    $0x18,%rsp
+    160d:	48 c7 07 00 00 00 00 	movq   $0x0,(%rdi)
+    1614:	48 89 f7             	mov    %rsi,%rdi
+    1617:	48 8d 6c 24 08       	lea    0x8(%rsp),%rbp
+    161c:	e8 3f ff ff ff       	callq  1560 <void (&std::forward<void (&)()>(std::remove_reference<void (&)()>::type&))()>
+    1621:	48 89 c7             	mov    %rax,%rdi
+    1624:	e8 37 ff ff ff       	callq  1560 <void (&std::forward<void (&)()>(std::remove_reference<void (&)()>::type&))()>
+    1629:	48 89 ef             	mov    %rbp,%rdi
+    162c:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    1631:	e8 7a ff ff ff       	callq  15b0 <std::_Maybe_wrap_member_pointer<void (*)()>::__do_wrap(void (*&&)())>
+    1636:	48 89 c7             	mov    %rax,%rdi
+    1639:	e8 92 ff ff ff       	callq  15d0 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    163e:	48 89 c7             	mov    %rax,%rdi
+    1641:	e8 8a ff ff ff       	callq  15d0 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    1646:	48 89 c7             	mov    %rax,%rdi
+    1649:	e8 82 ff ff ff       	callq  15d0 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    164e:	48 89 c7             	mov    %rax,%rdi
+    1651:	e8 7a ff ff ff       	callq  15d0 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    1656:	48 89 e7             	mov    %rsp,%rdi
+    1659:	48 8b 00             	mov    (%rax),%rax
+    165c:	48 89 04 24          	mov    %rax,(%rsp)
+    1660:	e8 7b ff ff ff       	callq  15e0 <std::_Bind_simple<void (*())()>&& std::forward<std::_Bind_simple<void (*())()> >(std::remove_reference<std::_Bind_simple<void (*())()> >::type&)>
+    1665:	bf 10 00 00 00       	mov    $0x10,%edi
+    166a:	48 89 c3             	mov    %rax,%rbx
+    166d:	e8 5e fa ff ff       	callq  10d0 <operator new(unsigned long)@plt>
+    1672:	48 89 df             	mov    %rbx,%rdi
+    1675:	49 89 c4             	mov    %rax,%r12
+    1678:	48 8d 05 c9 06 20 00 	lea    0x2006c9(%rip),%rax        # 201d48 <vtable for std::thread::_State_impl<std::_Bind_simple<void (*())()> >+0x10>
+    167f:	49 89 04 24          	mov    %rax,(%r12)
+    1683:	e8 58 ff ff ff       	callq  15e0 <std::_Bind_simple<void (*())()>&& std::forward<std::_Bind_simple<void (*())()> >(std::remove_reference<std::_Bind_simple<void (*())()> >::type&)>
+    1688:	48 89 c7             	mov    %rax,%rdi
+    168b:	e8 30 ff ff ff       	callq  15c0 <std::_Tuple_impl<0ul, void (*)()>::_M_head(std::_Tuple_impl<0ul, void (*)()>&)>
+    1690:	48 89 c7             	mov    %rax,%rdi
+    1693:	e8 38 ff ff ff       	callq  15d0 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    1698:	48 89 c7             	mov    %rax,%rdi
+    169b:	e8 30 ff ff ff       	callq  15d0 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    16a0:	48 89 ef             	mov    %rbp,%rdi
+    16a3:	48 c7 44 24 08 00 00 	movq   $0x0,0x8(%rsp)
+    16aa:	00 00 
+    16ac:	48 8b 00             	mov    (%rax),%rax
+    16af:	49 89 44 24 08       	mov    %rax,0x8(%r12)
+    16b4:	e8 37 ff ff ff       	callq  15f0 <std::tuple_element<0ul, std::tuple<std::thread::_State*, std::default_delete<std::thread::_State> > >::type& std::get<0ul, std::thread::_State*, std::default_delete<std::thread::_State> >(std::tuple<std::thread::_State*, std::default_delete<std::thread::_State> >&)>
+    16b9:	48 8b 15 08 09 20 00 	mov    0x200908(%rip),%rdx        # 201fc8 <pthread_create@GLIBC_2.2.5>
+    16c0:	48 89 ee             	mov    %rbp,%rsi
+    16c3:	4c 89 ef             	mov    %r13,%rdi
+    16c6:	4c 89 20             	mov    %r12,(%rax)
+    16c9:	48 89 c3             	mov    %rax,%rbx
+    16cc:	e8 df f9 ff ff       	callq  10b0 <std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)())@plt>
+    16d1:	48 8b 3b             	mov    (%rbx),%rdi
+    16d4:	48 85 ff             	test   %rdi,%rdi
+    16d7:	74 06                	je     16df <std::thread::thread<void (&)()>(void (&)())+0xdf>
+    16d9:	48 8b 07             	mov    (%rdi),%rax
+    16dc:	ff 50 08             	callq  *0x8(%rax)
+    16df:	48 c7 03 00 00 00 00 	movq   $0x0,(%rbx)
+    16e6:	48 83 c4 18          	add    $0x18,%rsp
+    16ea:	5b                   	pop    %rbx
+    16eb:	5d                   	pop    %rbp
+    16ec:	41 5c                	pop    %r12
+    16ee:	41 5d                	pop    %r13
+    16f0:	c3                   	retq   
+    16f1:	48 8b 3b             	mov    (%rbx),%rdi
+    16f4:	48 89 c5             	mov    %rax,%rbp
+    16f7:	48 85 ff             	test   %rdi,%rdi
+    16fa:	74 18                	je     1714 <std::thread::thread<void (&)()>(void (&)())+0x114>
+    16fc:	48 8b 07             	mov    (%rdi),%rax
+    16ff:	c5 f8 77             	vzeroupper 
+    1702:	ff 50 08             	callq  *0x8(%rax)
+    1705:	48 c7 03 00 00 00 00 	movq   $0x0,(%rbx)
+    170c:	48 89 ef             	mov    %rbp,%rdi
+    170f:	e8 0c fa ff ff       	callq  1120 <_Unwind_Resume@plt>
+    1714:	c5 f8 77             	vzeroupper 
+    1717:	eb ec                	jmp    1705 <std::thread::thread<void (&)()>(void (&)())+0x105>
+    1719:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001720 <unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 1ul, 0ul>(unsigned long)>:
+    1720:	48 ba 05 00 00 00 02 	movabs $0x200000005,%rdx
+    1727:	00 00 00 
+    172a:	48 89 f8             	mov    %rdi,%rax
+    172d:	48 f7 e2             	mul    %rdx
+    1730:	48 89 f8             	mov    %rdi,%rax
+    1733:	48 29 d0             	sub    %rdx,%rax
+    1736:	48 d1 e8             	shr    %rax
+    1739:	48 01 d0             	add    %rdx,%rax
+    173c:	48 c1 e8 1e          	shr    $0x1e,%rax
+    1740:	48 89 c2             	mov    %rax,%rdx
+    1743:	48 c1 e2 1f          	shl    $0x1f,%rdx
+    1747:	48 29 c2             	sub    %rax,%rdx
+    174a:	48 29 d7             	sub    %rdx,%rdi
+    174d:	48 89 f8             	mov    %rdi,%rax
+    1750:	c3                   	retq   
+    1751:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1758:	00 00 00 
+    175b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001760 <std::tuple_element<0ul, std::tuple<void (*)()> >::type& std::get<0ul, void (*)()>(std::tuple<void (*)()>&)>:
+    1760:	48 89 f8             	mov    %rdi,%rax
+    1763:	c3                   	retq   
+    1764:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    176b:	00 00 00 
+    176e:	66 90                	xchg   %ax,%ax
+
+0000000000001770 <std::thread::_State_impl<std::_Bind_simple<void (*())()> >::_M_run()>:
+    1770:	48 83 ec 08          	sub    $0x8,%rsp
+    1774:	48 83 c7 08          	add    $0x8,%rdi
+    1778:	e8 e3 ff ff ff       	callq  1760 <std::tuple_element<0ul, std::tuple<void (*)()> >::type& std::get<0ul, void (*)()>(std::tuple<void (*)()>&)>
+    177d:	48 89 c7             	mov    %rax,%rdi
+    1780:	e8 4b fe ff ff       	callq  15d0 <void (*&&std::forward<void (*)()>(std::remove_reference<void (*)()>::type&))()>
+    1785:	48 8b 00             	mov    (%rax),%rax
+    1788:	48 83 c4 08          	add    $0x8,%rsp
+    178c:	ff e0                	jmpq   *%rax
+    178e:	66 90                	xchg   %ax,%ax
+
+0000000000001790 <__libc_csu_init>:
+    1790:	41 57                	push   %r15
+    1792:	41 56                	push   %r14
+    1794:	41 89 ff             	mov    %edi,%r15d
+    1797:	41 55                	push   %r13
+    1799:	41 54                	push   %r12
+    179b:	4c 8d 25 76 05 20 00 	lea    0x200576(%rip),%r12        # 201d18 <__frame_dummy_init_array_entry>
+    17a2:	55                   	push   %rbp
+    17a3:	48 8d 2d 7e 05 20 00 	lea    0x20057e(%rip),%rbp        # 201d28 <__init_array_end>
+    17aa:	53                   	push   %rbx
+    17ab:	49 89 f6             	mov    %rsi,%r14
+    17ae:	49 89 d5             	mov    %rdx,%r13
+    17b1:	4c 29 e5             	sub    %r12,%rbp
+    17b4:	48 83 ec 08          	sub    $0x8,%rsp
+    17b8:	48 c1 fd 03          	sar    $0x3,%rbp
+    17bc:	e8 37 f8 ff ff       	callq  ff8 <_init>
+    17c1:	48 85 ed             	test   %rbp,%rbp
+    17c4:	74 20                	je     17e6 <__libc_csu_init+0x56>
+    17c6:	31 db                	xor    %ebx,%ebx
+    17c8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    17cf:	00 
+    17d0:	4c 89 ea             	mov    %r13,%rdx
+    17d3:	4c 89 f6             	mov    %r14,%rsi
+    17d6:	44 89 ff             	mov    %r15d,%edi
+    17d9:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+    17dd:	48 83 c3 01          	add    $0x1,%rbx
+    17e1:	48 39 dd             	cmp    %rbx,%rbp
+    17e4:	75 ea                	jne    17d0 <__libc_csu_init+0x40>
+    17e6:	48 83 c4 08          	add    $0x8,%rsp
+    17ea:	5b                   	pop    %rbx
+    17eb:	5d                   	pop    %rbp
+    17ec:	41 5c                	pop    %r12
+    17ee:	41 5d                	pop    %r13
+    17f0:	41 5e                	pop    %r14
+    17f2:	41 5f                	pop    %r15
+    17f4:	c3                   	retq   
+    17f5:	90                   	nop
+    17f6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    17fd:	00 00 00 
+
+0000000000001800 <__libc_csu_fini>:
+    1800:	f3 c3                	repz retq 
+
+Desensamblado de la sección .fini:
+
+0000000000001804 <_fini>:
+    1804:	48 83 ec 08          	sub    $0x8,%rsp
+    1808:	48 83 c4 08          	add    $0x8,%rsp
+    180c:	c3                   	retq   
